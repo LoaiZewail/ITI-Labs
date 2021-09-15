@@ -1,0 +1,21 @@
+
+--Company
+
+--1 select dnum , dname , MGRSSN ,(Fname+' '+Lname) as 'Manager name' from dbo.Departments , dbo.Employee where MGRSSN=SSN
+--2 select dname  , pname from dbo.Departments d , dbo.Project p where d.dnum = p.dnum
+--3 select d.essn , d.Dependent_name , d.sex , d.Bdate , (fname +' '+lname) from dbo.Dependent d , dbo.Employee where d.essn = ssn
+--4 select Pnumber , Pname , Plocation from dbo.Project where Plocation like '%cairo%' or Plocation like '%alex%'
+--5 select * from dbo.Project where Pname like 'a%'
+--6 select * from dbo.Employee where dno=30 and salary between 1000 and 2000
+--7 select e.fname from dbo.Employee d, dbo.Employee e where CONCAT(d.fname,' ',d.lname) like 'kamel mohamed' and e.Superssn= d.SSN
+--8 select fname , pname from dbo.Employee , dbo.Project , dbo.Works_for where Pnumber=pno and ESSn=SSN order by Pname 
+--9 select (lname+' '+fname) , pname ,dno from dbo.Employee , dbo.Project , dbo.Works_for where Pnumber=pno and ESSn=SSN order by dno lname , fname
+--10 select p.pnumber , d.dname , e.lname , e.Address, e.bdate from dbo.Employee e , dbo.Project p , dbo.Departments d where d.dnum=p.dnum and d.MGRSSN = e.SSN and Plocation like '%cairo%'
+
+--iti
+
+--1 select st_id , St_Fname , St_Lname , St_Address , St_Age , s.Dept_Id , St_super ,Ins_Name from dbo.Student s left outer join dbo.Instructor on St_super=Ins_Id
+--2 select crs_id , crs_name , crs_duration , c.top_id , top_name from dbo.Course c left outer join dbo.Topic t on c.Top_Id=t.Top_Id
+--3 select i.ins_name , c.evaluation , top_name from dbo.Instructor i , dbo.Ins_Course c , dbo.Topic where i.Ins_Id=c.Ins_Id and top_name like '%web%'
+--4 select d.Dept_Id, d.Dept_Name , d.Dept_Desc , d.Dept_Location , d.Dept_Manager , d.Manager_hiredate , i.Ins_Name from dbo.Department d left outer join dbo.Instructor i on d.Dept_Id=i.Dept_Id
+--5 select concat(s.st_fname , s.st_lname) , c.Crs_Name from dbo.Student s , dbo.Course c , dbo.Stud_Course g where c.Crs_Id=g.Crs_Id and g.Grade is not null

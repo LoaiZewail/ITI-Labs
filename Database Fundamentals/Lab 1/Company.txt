@@ -1,0 +1,18 @@
+1==================
+select * from dbo.Employee
+2==================
+select fname, lname, salary, dno from dbo.Employee
+3==================
+select pname, plocation, Dname  from dbo.Project as b , dbo.Departments as c where b.Dnum = c.Dnum
+4==================
+select fname+' ' +lname as 'Full name' , (salary*12*.1) as 'ANNUAL COMM'  from dbo.Employee
+5==================
+select SSN , Fname from dbo.employee where salary > 1000
+6==================
+select SSN , Fname from dbo.Employee where salary*12 > 10000
+7==================
+select Fname , salary from dbo.Employee where Sex like 'F'
+8==================
+select Dnum , Dname from dbo.Departments where MGRSSN = 968574
+9==================
+select Pnumber, Pname, Plocation from dbo.Project where Dnum=10

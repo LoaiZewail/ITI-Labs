@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1619078878 source:c:\users\loai zewail\desktop\6 branching\main.cpp
+	<iostream>
+	<math.h>
+	<stdio.h>
+

@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1619596615 source:c:\users\loai zewail\desktop\nchess 1 dim\main.cpp
+	<iostream>
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+

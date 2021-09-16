@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3</title>
+    <style>
+        #div1{
+            position: relative;
+            width: 500px;
+            height: 500px;
+            border: 2px solid tomato;
+            margin: auto;
+        }
+        #div2{
+            width: 100px;
+            height: 22px;
+            margin-top: 10px;
+            margin: auto;
+        }
+        img{
+            width: 70px;
+            height: 70px;
+        }
+        .startpos1{
+            position: absolute;
+            top: 0px;
+            left: 214px;
+        }
+        .startpos2{
+            position: absolute;
+            top: 211px;
+            left: 0px;
+        }
+        .startpos3{
+            position: absolute;
+            top: 211px;
+            right: 0px;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="div1">
+        <img class="startpos1" src="UP/1.jpg" id="one">
+        <img class="startpos2" src="UP/2.jpg" id="two">
+        <img class="startpos3" src="UP/3.jpg" id="three">
+    </div>
+    <div id="div2">
+    <input type="button" value="Start" id="startbtn">
+    <input type="button" value="Reset" id="resetbtn">
+    </div>
+    <script>
+            var imgone = document.getElementById('one');
+            var imgtwo = document.getElementById('two');
+            var imgthree = document.getElementById('three');
+
+            var startbutton = document.getElementById('startbtn');
+            var resetbutton = document.getElementById('resetbtn');
+
+            startbutton.addEventListener('click', startfun);
+            resetbutton.addEventListener('click', resetfun);
+
+        function startfun(){
+            var pos1 =imgone.style.top;
+            var pos2 =imgtwo.style.left;
+            var pos3 =imgthree.style.right;
+
+            var id = setInterval(frame, 10);
+            function frame() {
+            if (pos1 == 430) {
+            clearInterval(id);
+            } else {
+            pos1++;
+            pos2++;
+            pos3++;
+            imgone.style.top = pos1 + 'px';
+            imgtwo.style.left = pos2 + 'px';
+            imgthree.style.right = pos3 + 'px';
+            }
+        }
+        }
+        function resetfun(){
+            
+        }
+    </script>
+</body>
+</html>

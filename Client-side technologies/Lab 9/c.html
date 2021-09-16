@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>c</title>
+    <script>
+
+        var myerror = new Error("custom error");
+        console.log(myerror.name);
+        console.log(myerror.message);
+
+        try{
+            var result = parseInt(prompt("enter value between 10 and 20","15"));
+            if (result <10)
+            throw "less than expected";
+            else if (result >20)
+            throw new RangeError("out of range");
+            else alert("value is correct");
+        }
+        catch(e){
+            console.log("catch block excuted after error");
+        }
+        finally{
+            console.log("done");
+        }
+        console.log("after finally block");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

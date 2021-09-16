@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3.1</title>
+    <script>
+
+        var arr = [];
+        for (i=0;i<3;i++){
+            var n=parseInt( prompt("Enter a Number"));
+            arr.push(n);
+        }
+        var x=eval(arr.join('+'))
+        document.write('<h2><font color="red">sum of the 3 values </font>'+'<font color="gray">'+x+'</font></h2>');
+        document.write('<h2><font color="red">multiplication of the 3 values </font>'+'<font color="gray">'+parseInt(arr[0])*parseInt(arr[1])*parseInt(arr[2])+'</font></h2>');
+        document.write('<h2><font color="red">division of the 3 values </font>'+'<font color="gray">'+parseInt(arr[0])/parseInt(arr[1])/parseInt(arr[2])+'</font></h2>');
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3</title>
+    <style>
+        body{
+            padding: 100px 400px;
+        }
+        #mainmain{
+            
+            position: relative;
+        }
+        #facebook{
+            color: white;
+            font-family: tahoma;
+            background-color: rgb(28, 28, 146);
+            display: block;
+            padding: 15px;
+            font-size: 20px;
+            position: absolute;
+            width: 240px;
+            text-align: center;
+            
+        }
+        #twitter{
+            color: white;
+            font-family: tahoma;
+            background-color: cornflowerblue;
+            display: block;
+            padding: 15px;
+            font-size: 20px;
+            position: absolute;
+            right: 0;
+            width: 240px;
+            text-align: center;
+        }
+        #middle{
+            border-radius: 50%;
+            background-color: lightgray;
+            display: inline-block;
+            padding: 10px;
+            position:absolute;
+            left: 256px;
+            top: 93px;
+            font-size: large;
+        }
+
+        form{
+            position: absolute;
+            top: 158px;
+        }
+        input {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+        input[type=submit]{
+            color: white;
+            font-family: tahoma;
+            background-color: rgb(28, 28, 146);
+            font-size: 20px;
+        }
+        h3 span{
+            color: cornflowerblue;
+            
+        }
+        h3{
+            text-align: center;
+        }
+        .right{
+            position: absolute;
+            right: 0px;
+        }
+        h4{
+            position: absolute;
+            bottom: 0;
+        }
+
+
+    </style>
+</head>
+<body>
+<div id="mainmain">
+    <div id="top">
+        <div id="facebook">Login to Facebook</div>
+        <div id="twitter">Login to Twitter</div>
+    </div>
+    <div id="middle">Or</div>
+    <div id="form">
+        <form>
+            <input type="text" name="username" placeholder="Username">
+            <input type="password" name="password">
+            <input type="checkbox" name="check">
+            <span class="left">Keep me signed in</span>
+            <span class="right">Forgot your Password ?</span>
+            <input type="submit" value="Login">
+            <h3>Not a member ? <span>Sign up now!</span></h3>
+        </form>
+
+    </div>
+</div>
+    <center>
+    <a href="../Index/Index.html">
+    <h4>Go back to HOME !</h4></a>
+    </center>
+</body>
+
+</html>

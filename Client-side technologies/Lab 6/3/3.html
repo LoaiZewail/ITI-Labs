@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3</title>
+
+    <style>
+        #maind{
+            margin-left: auto;
+            margin-right: auto;
+            background-color: bisque;
+            width: 500px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        #one{
+            margin-left: auto;
+            margin-right: auto;
+            background-color: rgb(190, 189, 189);
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            
+        }
+        #two{
+            margin-left: auto;
+            margin-right: auto;
+            background-color: rgb(190, 189, 189);
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            
+        }
+        #three{
+            margin-left: auto;
+            margin-right: auto;
+            background-color: rgb(190, 189, 189);
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+        }
+        #four{
+            margin-left: auto;
+            margin-right: auto;
+            background-color: rgb(190, 189, 189);
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+        }
+        #five{
+            margin-left: auto;
+            margin-right: auto;
+            background-color: rgb(190, 189, 189);
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="maind">
+        <h1 id="one">&nbsp;</h1>
+        <h1 id="two">&nbsp;</h1>
+        <h1 id="three">&nbsp;</h1>
+        <h1 id="four">&nbsp;</h1>
+        <h1 id="five">&nbsp;</h1>
+    </div>
+
+    <script>
+        
+        var one=document.getElementById('one');
+        var two=document.getElementById('two');
+        var three=document.getElementById('three');
+        var four=document.getElementById('four');
+        var five=document.getElementById('five');
+        
+
+        function changeone(){
+            setTimeout(function(){
+            one.style.backgroundColor="tomato";
+            two.style.backgroundColor="rgb(190, 189, 189)";
+            three.style.backgroundColor="rgb(190, 189, 189)";
+            four.style.backgroundColor="rgb(190, 189, 189)";
+            five.style.backgroundColor="rgb(190, 189, 189)";
+            },500);
+            }
+
+        function changetwo(){
+            setTimeout(function(){
+            one.style.backgroundColor="rgb(190, 189, 189)";
+            two.style.backgroundColor="tomato";
+            three.style.backgroundColor="rgb(190, 189, 189)";
+            four.style.backgroundColor="rgb(190, 189, 189)";
+            five.style.backgroundColor="rgb(190, 189, 189)";
+            },1000);
+            }
+
+        function changethree(){
+            setTimeout(function(){
+            one.style.backgroundColor="rgb(190, 189, 189)";
+            two.style.backgroundColor="rgb(190, 189, 189)";
+            three.style.backgroundColor="tomato";
+            four.style.backgroundColor="rgb(190, 189, 189)";
+            five.style.backgroundColor="rgb(190, 189, 189)";
+            },1500);
+            }
+
+        function changefour(){
+            setTimeout(function(){
+            one.style.backgroundColor="rgb(190, 189, 189)";
+            two.style.backgroundColor="rgb(190, 189, 189)";
+            three.style.backgroundColor="rgb(190, 189, 189)";
+            four.style.backgroundColor="tomato";
+            five.style.backgroundColor="rgb(190, 189, 189)";
+            },2000);
+            }
+
+        function changefive(){
+            setTimeout(function(){
+            one.style.backgroundColor="rgb(190, 189, 189)";
+            two.style.backgroundColor="rgb(190, 189, 189)";
+            three.style.backgroundColor="rgb(190, 189, 189)";
+            four.style.backgroundColor="rgb(190, 189, 189)";
+            five.style.backgroundColor="tomato";
+            },2500);
+            }
+        
+        var t=setInterval(function() {
+            changeone() ;
+            changetwo() ;
+            changethree() ;
+            changefour() ;
+            changefive() ;
+        }, 7500);
+
+    </script>
+</body>
+</html>

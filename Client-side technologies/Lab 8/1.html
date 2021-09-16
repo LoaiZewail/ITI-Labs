@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+</head>
+<style>
+ul{
+    border: 2px solid black;
+    width: 300px;
+    height: 200px;
+    overflow-y:auto;
+    display: inline-block;
+    padding: 40px;
+}
+#one{
+    margin: 10px 11%;
+}
+#two{
+    margin: 5% 35%;
+}
+.selected1{
+    border: 1px solid tomato;
+    background-color: lightslategray;
+}
+.selected2{
+    border: 1px solid tomato;
+    background-color: lightslategray;
+}
+li{
+    width: 150px;
+}
+li:hover{
+    border: 2px solid tomato;
+    cursor: pointer;
+}
+</style>
+<body>
+    <div id="one">
+    <ul id="ulone"></ul>
+    <ul id="ultwo"></ul>
+    </div>
+    <div id="two">
+    <input type="button" name="right" value="&lt;">
+    <input type="button" name="left" value="&gt;">
+    </div>
+    Add course <input type="text" name="text">
+    <input type="button" value="add" name="add">
+    <script>
+        window.addEventListener('load', function () {
+            
+            newcourse = document.querySelector("input[name='text']");
+
+            targetbutton = document.querySelector("input[name='add']");
+            targetbutton.addEventListener('click', addnewli);
+
+            targetlist = this.document.getElementById('ulone');
+            secondlist = this.document.getElementById('ultwo');
+
+            rightbutton = document.querySelector("input[name='right']");
+            rightbutton.addEventListener('click', doright);
+
+            leftbutton = document.querySelector("input[name='left']");
+            leftbutton.addEventListener('click', doleft);
+
+            moved = document.getElementsByClassName('selected1');
+            removed = document.getElementsByClassName('selected2');
+
+        });
+
+        function addnewli() {
+
+            // create li
+            var createli = document.createElement('li');
+            createli.innerText = newcourse.value;
+
+            // append li inside ul
+            targetlist.appendChild(createli);
+
+            newcourse.value = "";
+            newcourse.focus();
+        }
+        //select li items 1
+        var selectedli = document.getElementById('ulone')
+        selectedli.addEventListener('click', function (e) {
+            if (e.target.nodeName == "LI")
+            e.target.classList.add('selected1');
+            });
+            
+        //select li items 2
+        var selectedli2 = document.getElementById('ultwo');
+        selectedli2.addEventListener('click', function (e) {
+            if (e.target.nodeName == "LI")
+            e.target.classList.add('selected2');
+            });
+
+        //right button//
+        function doright (){
+            targetlist.append(removed);
+            secondlist.removeChild(removed);
+        }
+        //left button//
+        function doleft (){
+            for(var i=0;i<moved.length;i++){
+            secondlist.append(moved[i].innerText);
+        }
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+</head>
+<style>
+    #mainb{
+        border: groove 10px grey;
+        background-color: white;
+        padding: 50px;
+    }
+    #headb{
+        border: solid 2px black;
+        padding: 20px;
+        text-align: center;
+        background-color:pink;
+        font-size: 25px;
+        font-family: Georgia, Times, 'Times New Roman', serif;
+    }
+    #listb{
+        position: relative;
+        top: 10px;
+        border: solid 2px black;
+        background-color:pink;
+    }
+    #listb ul {
+        list-style: none;
+    }
+    #listb li{
+        display: inline-block;
+        text-decoration: underline;
+        color: red;
+    }
+    #bodyb{
+        position: relative;
+        top: 20px;
+        border: solid 2px black;
+        background-color:pink;
+        padding-left: 70px;
+        padding-right: 70px;
+    }
+    #bodyb h2{
+        color: rgb(7, 7, 75);
+        text-decoration: underline;
+    }
+    #bodyb span{
+        font-weight:900;
+        color: rgb(7, 7, 75);
+        font-style: normal;
+        font-size: 15px;
+        font-family: tahoma;
+    }
+    #bodyb p{
+        font-style: oblique;
+    }
+    #bodyb li{
+        list-style: none;
+        text-decoration: underline;
+        color: red;
+    }
+    #bodyb li::before{
+        content: '';
+        display: inline-block;
+        height: 10px;
+        width: 10px;
+        background-image: url(../1/list.jpg);
+    }
+    #footerb{
+        background-color:pink;
+        text-align: center;
+        position: relative;
+        top: 20px;
+    }
+    .left , .right {
+        width: 100px;
+        height: 100px;
+        vertical-align: middle;
+    }
+    #mainmain{
+        background-image: url(../1/pink-brick-wall-texture-empty-background-vintage-stonewall_34008-551.jpg);
+        background-repeat: repeat;
+        padding: 100px 300px;
+    }
+
+</style>
+<body>
+    <div id="mainmain">
+        <div id="mainb">
+            <div id="headb">
+                <img class="left" src="../1/2d00e8f514a902e4e82572664dfdc00c.jpg">
+                <span>Terps Calculators Inc.</span>
+                <img class="right" src="../1/1200px-University_of_Maryland_seal.svg.png">
+            </div>
+            <div id="listb">
+                <ul>
+                    <li>http://www.umd.edu</li>
+                    <li>http://www.cs.umd.edu</li>
+                    <li>http://www.testudioumd.edu</li>
+                </ul>
+            </div>
+            <div id="bodyb">
+                <h2>Introduction</h2>
+                <p><span>Terps Calculators Inc.</span>implements and provides these calculators for your use. We keep expanding our collection every day, so make sure you stop by often.</p>
+                <h2>Calculators</h2>
+                <Ul>
+                    <li>Grades Calculator</li>
+                    <li>Interest Calculator</li>
+                </Ul>
+            </div>
+            <div id="footerb">
+                <h4>Terps Calculators Inc.&#174;</h4>
+            </div>
+        </div>
+    </div>
+        <center>
+        <a href="../Index/Index.html">
+        <h4>Go back to HOME !</h4></a>
+        </center>
+</body>
+</html>

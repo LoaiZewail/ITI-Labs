@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DropDownMenu</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    div{
+        text-align: center;
+    }
+    li{
+        list-style: none;
+        display: inline-block;
+        padding: 10px;
+        width: 120px;
+        font: bold 15px tahoma;
+        background-color: lightblue;
+    }
+    li:hover{
+        cursor: pointer;
+        background-color: blue;
+        color: white;
+
+    }
+    #mulist{
+        display: none;
+        position: absolute;
+        top:38px;
+        left: 0;
+    }
+    #mulist> li{
+        background-color: tomato;
+    }
+    #mulist >li:hover{
+        color: teal;
+    }
+    #targetli {
+        position: relative;
+    }
+    #targetli:hover #mulist{
+        display: block;
+    }
+
+
+</style>
+<body>
+    <div>
+    <ul>
+        <li>ITI</li>
+        <li id="targetli">MU
+            <ul id="mulist">
+                <li>engineering</li>
+                <li>commerce</li>
+                <li>education</li>
+            </ul>
+        </li>
+        <li>MCIT</li>
+    </ul>
+    </div>
+</body>
+</html>

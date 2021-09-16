@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5</title>
+    <style>
+        *{
+            font-family: tahoma;
+        }
+        h3{
+            color: darkgreen;
+        }
+        hr{
+            border-top: dotted greenyellow 2px;
+        }
+        input{
+            width: 100%;
+            padding: 3px;
+        }
+        td select{
+            width: 100%;
+            padding: 3px;
+        }
+        .pay{
+            width: 22%;
+            padding: 3px;
+        }
+        .submit{
+            width: 50px;
+            background-color: greenyellow;
+        }
+        .img1{
+            width: 50px;
+            height: 50px;
+            padding: 20px;
+            display: block;
+        }
+        .img2{
+            width: 585px;
+        }
+        div{
+            padding: 0 250px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+		<form method="get" action="server.html">
+			<table  cellspacing="10" cellpadding="10">
+                <tr>
+                    <td colspan="6"><img class="img2" src="../5/Untitled.png"></td>
+                </tr>
+				<tr>
+                    <td><img class="img1" src="../5/icon-for-profile-9.jpg"></td></tr>
+                    <tr>
+					<td colspan="6"><h3>non-profit organization</h3></td>
+				</tr>
+				<tr>
+					<td colspan="3">name:<br><input type="text"  name="name"/></td>
+                    <td colspan="3">phone number:<br><input type="text"  name="phonenumber"/></td>
+				</tr>
+                <tr>
+					<td colspan="6">street address:<br><input type="text"  name="streetaddress"/></td>
+				</tr>
+				<tr>
+					<td colspan="2">city:<br><input type="text"  name="city"/></td>
+                    <td colspan="2">state:<br><input type="text"  name="state"/></td>
+                    <td colspan="2">zip code:<br><input type="text"  name="zipcode"/></td>
+				</tr>    
+            </table> 
+            <hr> 
+            <table  cellspacing="10" cellpadding="10">
+                <tr>
+                    <td><img class="img1" src="../5/icon-for-profile-9.jpg"></td>
+                </tr>
+                <tr>
+                    <td colspan="3"><h3>sponsor contact information</h3></td>
+                </tr>
+				<tr>
+					<td colspan="3">first name:<br><input type="text"  name="firstname"/></td>
+                    <td colspan="3">last name:<br><input type="text"  name="lastname"/></td>
+				</tr>
+                <tr>
+					<td colspan="3">phone number:<br><input type="text"  name="phonenumber"/></td>
+                    <td colspan="3">email address:<br><input type="email"  name="emailaddress"/></td>
+				</tr>
+				<tr>
+					<td colspan="6">street address:<br><input type="text"  name="scstreetaddress"/></td>
+				</tr>
+                <tr>
+					<td colspan="2">city:<br><input type="text"  name="sccity"/></td>
+                    <td colspan="2">state:<br><input type="text"  name="scstate"/></td>
+                    <td colspan="2">zip code:<br><input type="text"  name="sczipcode"/></td>
+				</tr>
+            </table>
+                <hr>
+            <table cellspacing="10" cellpadding="10">
+				<tr>
+                    <img class="img1" src="../5/icon-for-profile-9.jpg">
+						<td colspan="1" class="pay" >donation amount:<br>
+							<select name="donationamount">
+									<option value="1000">1000</option>
+									<option value="2000">2000</option>
+									<option value="3000">3000</option>
+									<option value="4000">4000</option>
+							</select>
+						</td>
+                        <td colspan="1" class="pay" >payment method:<br>
+							<select name="paymentmethod">
+									<option value="visa">Visa</option>
+									<option value="cash">Cash</option>
+							</select>
+						</td>
+				</tr>
+				<tr>
+					<td class="submit"><input type="submit" value="Register"/></td>
+                    <td class="submit">&nbsp;</td>
+				</tr>
+			</table>
+		</form>
+    </div>
+        <center>
+        <a href="../Index/Index.html">
+        <h4>Go back to HOME !</h4></a>
+        </center>
+</body>
+</html>

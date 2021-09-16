@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>b</title>
+    <script>
+        
+        var i=0;
+        function loarr(){
+            var arrColor=['UP/1.jpg','UP/2.jpg','UP/3.jpg','UP/4.jpg', 'UP/5.jpg']
+            document.body.style.backgroundImage="url('"+arrColor[i]+"')";
+            i = (i + 1) % arrColor.length;
+        }
+        setInterval(loarr,5000);
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

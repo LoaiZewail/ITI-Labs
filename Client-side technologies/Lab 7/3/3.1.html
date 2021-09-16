@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3</title>
+    <style>
+        #div1{
+            position: relative;
+            width: 500px;
+            height: 500px;
+            border: 2px solid tomato;
+            margin: auto;
+        }
+        #div2{
+            width: 100px;
+            height: 22px;
+            margin-top: 10px;
+            margin: auto;
+        }
+        img{
+            width: 70px;
+            height: 70px;
+        }
+        .startpos1{
+            position: absolute;
+            bottom: 0px;
+            left: 43%;
+        }
+        .startpos2{
+            position: absolute;
+            top: 43%;
+            left: 0px;
+        }
+        .startpos3{
+            position: absolute;
+            top: 43%;
+            right: 0px;
+        }
+        .startpos12{
+            position: absolute;
+            bottom: 29%;
+            left: 43%;
+        }
+        .startpos22{
+            position: absolute;
+            bottom: 50%;
+            left: 50%;
+        }
+        .startpos32{
+            position: absolute;
+            bottom: 50%;
+            right: 50%;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="div1">
+        <img  src="UP/1.jpg" id="one">
+        <img src="UP/2.jpg" id="two">
+        <img src="UP/3.jpg" id="three">
+    </div>
+    <div id="div2">
+    <input type="button" value="Start" id="startbtn">
+    <input type="button" value="Reset" id="resetbtn">
+    </div>
+    <script>
+            var imgone = document.getElementById('one');
+            var imgtwo = document.getElementById('two');
+            var imgthree = document.getElementById('three');
+
+            var startbutton = document.getElementById('startbtn');
+            var resetbutton = document.getElementById('resetbtn');
+
+            startbutton.addEventListener('click', startfun);
+            resetbutton.addEventListener('click', resetfun);
+
+            window.addEventListener('load', function () {      
+
+            imgone.classList.add('startpos1');
+            imgtwo.classList.add('startpos2');
+            imgthree.classList.add('startpos3');
+        });
+
+        function startfun(){
+            imgone.classList.add('startpos12');
+            imgtwo.classList.add('startpos22');
+            imgthree.classList.add('startpos32');
+        }
+        function resetfun(){
+            imgone.classList.remove('startpos12');
+            imgtwo.classList.remove('startpos22');
+            imgthree.classList.remove('startpos32');
+        }
+    </script>
+</body>
+</html>

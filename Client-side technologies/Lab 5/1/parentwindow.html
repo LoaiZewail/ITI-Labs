@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+
+        var username=prompt('Enter your name !')
+        var im=prompt('Enter Image ID (1 - 5) !');
+        var openedwindow;
+        function openchildfun() {
+            openedwindow= open("childwindow.html", "", "width=300,height=300");
+        }
+
+    </script>
+</head>
+<body>
+    <h3 style="text-align:center;color:black;">Parent Window</h3>
+
+    <input type="button" value="Open Child" onclick="openchildfun();" /><br /><br />
+
+</body>
+</html>

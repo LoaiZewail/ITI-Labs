@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        img{
+            width:100px;
+            height:100px;
+            margin:10px;
+            border-radius:50%;
+            border: 2px solid tomato;
+        }
+        img:hover{
+            cursor:pointer; 
+        }
+        div{
+            height: 500px;
+            width: 500px;
+            text-align: center;
+            margin: 128px auto;
+        }
+    </style>
+    <script>
+        window.addEventListener('load', function () {
+            var img1 = document.images[0].addEventListener('click', changebg1);
+            function changebg1 (){
+                document.images[0].src="UP/1.jpg"
+            }
+            var img2 = document.images[1].addEventListener('click', changebg2);
+            function changebg2 (){
+                document.images[1].src="UP/2.jpg"
+            }
+            var img3 = document.images[2].addEventListener('click', changebg3);
+            function changebg3 (){
+                document.images[2].src="UP/3.jpg"
+            }
+            var img4 = document.images[3].addEventListener('click', changebg4);
+            function changebg4 (){
+                document.images[3].src="UP/4.jpg"
+            }
+            var img5 = document.images[4].addEventListener('click', changebg5);
+            function changebg5 (){
+                document.images[4].src="UP/1.jpg"
+            }
+            var img6 = document.images[5].addEventListener('click', changebg6);
+            function changebg6 (){
+                document.images[5].src="UP/2.jpg"
+            }
+            var img7 = document.images[6].addEventListener('click', changebg7);
+            function changebg7 (){
+                document.images[6].src="UP/3.jpg"
+            }
+            var img8 = document.images[7].addEventListener('click', changebg8);
+            function changebg8 (){
+                document.images[7].src="UP/4.jpg"
+            }
+            var img9 = document.images[8].addEventListener('click', changebg9);
+            function changebg9 (){
+                document.images[8].src="UP/5.jpg"
+            }
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <img src="UP/7.jpg" />
+        <img src="UP/7.jpg" />
+        <img src="UP/7.jpg" />
+        <img src="UP/7.jpg" />
+        <img src="UP/7.jpg" />
+        <img src="UP/7.jpg" />
+        <img src="UP/7.jpg" />
+        <img src="UP/7.jpg" />
+        <img src="UP/7.jpg" />
+    </div>
+</body>
+</html>

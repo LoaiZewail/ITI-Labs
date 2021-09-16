@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3</title>
+    <script>
+
+
+        var Name=prompt('Enter Name !');
+
+        do{
+        var PhoneNumber=prompt('Enter Phone Number !');   
+        }while(isNaN(PhoneNumber)||PhoneNumber.length!==8);
+        do{
+        var MobileNumber=prompt('Enter Mobile Number !');
+        }while(isNaN(MobileNumber)||MobileNumber.length!==11);
+
+        var Email=prompt('Enter Email !');
+
+        do{
+        var col=prompt('Enter Color (red , green ,blue) !');
+        }while((col!=='red')&&(col!=='green')&&(col!=='blue'));
+        
+        document.write('<h1>entering user info</h1><br><hr>');
+
+        document.write('<h2><font color="'+col+'">Welcom dear guest </font><font color="black">'+Name+'</font></h2>');
+        document.write('<h2><font color="'+col+'">your telephone number is </font><font color="black">'+PhoneNumber+'</font></h2>');
+        document.write('<h2><font color="'+col+'">your mobile number is </font><font color="black">'+MobileNumber+'</font></h2>');
+        document.write('<h2><font color="'+col+'">your email address is </font><font color="black">'+Email+'</font></h2>');
+
+
+        var today = new Date();
+        var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        var dateTime = date+' '+time;
+        document.write('<h2><font color="'+col+'">today is </font><font color="black">'+dateTime+'</font></h2>')
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

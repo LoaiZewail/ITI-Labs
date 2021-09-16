@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>2</title>
+    <style>
+        div{
+            width: 1000px;
+            margin: 30px auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <p id="p1">ITI Mansoura Branch - Front-end & Cross-platform Mobile Developer</p>
+    </div>
+    <table>
+        <tr>
+            <th>Font Family</th>
+            <td>
+                <input type="radio" name="fontfamily" value="arial"/> arial
+                <input type="radio" name="fontfamily" value="georgia"/> georgia 
+                <input type="radio" name="fontfamily" value="impact"/> impact
+                <input type="radio" name="fontfamily" value="verdana"/> verdana
+            </td>
+        </tr>
+        <tr>
+            <th>Text Align</th>
+            <td>
+                <input type="radio" name="textalign" value="center"/> center
+                <input type="radio" name="textalign" value="right"/> right 
+                <input type="radio" name="textalign" value="left"/> left
+                <input type="radio" name="textalign" value="justify"/> justify
+            </td>
+        </tr>
+        <tr>
+            <th>Line Height</th>
+            <td>
+                <input type="radio" name="lineheight" value="normal"/> normal
+                <input type="radio" name="lineheight" value="10px"/>10px 
+                <input type="radio" name="lineheight" value="15px"/> 15px
+                <input type="radio" name="lineheight" value="1.5"/> 1.5
+            </td>
+        </tr>
+        <tr>
+            <th>Letter Spacing</th>
+            <td>
+                <input type="radio" name="letterspacing" value="normal"/> normal
+                <input type="radio" name="letterspacing" value="-1px"/> -1px
+                <input type="radio" name="letterspacing" value="2px"/> 2px
+                <input type="radio" name="letterspacing" value="3px"/> 3px
+            </td>
+        </tr>
+        <tr>
+            <th>Text Indent</th>
+            <td>
+                <input type="radio" name="textindent" value="0px"/> 0px
+                <input type="radio" name="textindent" value="5px"/> 5px
+                <input type="radio" name="textindent" value="15px"/> 15px
+                <input type="radio" name="textindent" value="25px"/> 25px
+            </td>
+        </tr>
+        <tr>
+            <th>Text Transform</th>
+            <td>
+                <input type="radio" name="texttransform" value="none"/> none
+                <input type="radio" name="texttransform" value="capitalize"/> capitalize
+                <input type="radio" name="texttransform" value="uppercase"/> uppercase
+                <input type="radio" name="texttransform" value="lowercase"/> lowercase
+            </td>
+        </tr>
+        <tr>
+            <th>Text Decoration</th>
+            <td>
+                <input type="radio" name="textdecoration" value="none"/> none
+                <input type="radio" name="textdecoration" value="line-through"/> line-through
+                <input type="radio" name="textdecoration" value="overline"/> overline
+                <input type="radio" name="textdecoration" value="underline"/> underline
+            </td>
+        </tr>
+        <tr>
+            <th>Text Border</th>
+            <td>
+                <input type="radio" name="textborder" value="none"/> none
+                <input type="radio" name="textborder" value="dotted"/> dotted 
+                <input type="radio" name="textborder" value="double"/> double
+                <input type="radio" name="textborder" value="groove"/> groove
+            </td>
+        </tr>
+        <tr>
+            <th>Border Color</th>
+            <td>
+                <input type="radio" name="bordercolor" value="none"/> none
+                <input type="radio" name="bordercolor" value="pink"/> pink 
+                <input type="radio" name="bordercolor" value="red"/> red
+                <input type="radio" name="bordercolor" value="blue"/> blue
+            </td>
+        </tr>
+    </table>  
+
+    <script>
+        var allbtns = document.querySelectorAll('[name=fontfamily]');
+        for (var i = 0; i < allbtns.length; i++) {
+                allbtns[i].addEventListener('click', fontfamily);
+            }
+
+            var allbtnsa = document.querySelectorAll('[name=textalign]');
+        for (var i = 0; i < allbtnsa.length; i++) {
+                allbtnsa[i].addEventListener('click', textalign);
+            }
+
+            var allbtnsb = document.querySelectorAll('[name=lineheight]');
+        for (var i = 0; i < allbtnsb.length; i++) {
+                allbtnsb[i].addEventListener('click', lineheight);
+            }
+
+            var allbtnsc = document.querySelectorAll('[name=letterspacing]');
+        for (var i = 0; i < allbtnsc.length; i++) {
+                allbtnsc[i].addEventListener('click', letterspacing);
+            }
+
+            var allbtnsd = document.querySelectorAll('[name=textindent]');
+        for (var i = 0; i < allbtnsd.length; i++) {
+                allbtnsd[i].addEventListener('click', textindent);
+            }
+
+            var allbtnse = document.querySelectorAll('[name=texttransform]');
+        for (var i = 0; i < allbtnse.length; i++) {
+                allbtnse[i].addEventListener('click', texttransform);
+            }
+
+            var allbtnsf = document.querySelectorAll('[name=textdecoration]');
+        for (var i = 0; i < allbtnsf.length; i++) {
+                allbtnsf[i].addEventListener('click', textdecoration);
+            }
+
+            var allbtnsg = document.querySelectorAll('[name=textborder]');
+        for (var i = 0; i < allbtnsg.length; i++) {
+                allbtnsg[i].addEventListener('click', textborder);
+            }
+
+            var allbtnsh = document.querySelectorAll('[name=bordercolor]');
+        for (var i = 0; i < allbtnsh.length; i++) {
+                allbtnsh[i].addEventListener('click', bordercolor);
+            }
+
+        function fontfamily(ss){
+            document.getElementById('p1').style.fontFamily=ss.target.value;
+        }
+        function textalign(dd){
+            document.getElementById('p1').style.textAlign=dd.target.value;
+        }
+        function lineheight(ff){
+            document.getElementById('p1').style.lineHeight=ff.target.value;
+        }
+        function letterspacing(gg){
+            document.getElementById('p1').style.letterSpacing=gg.target.value;
+        }
+        function textindent(hh){
+            document.getElementById('p1').style.textIndent=hh.target.value;
+        }
+        function texttransform(jj){
+            document.getElementById('p1').style.textTransform=jj.target.value;
+        }
+        function textdecoration(kk){
+            document.getElementById('p1').style.textDecoration=kk.target.value;
+        }
+        function textborder(ll){
+            document.getElementById('p1').style.border=ll.target.value;
+        }
+        function bordercolor(vv){
+            document.getElementById('p1').style.borderColor=vv.target.value;
+        }
+    </script>
+</body>
+</html>

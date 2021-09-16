@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3.2</title>
+    <script>
+
+        var arr = [];
+        for (i=0;i<5;i++)
+        {
+            var n=parseInt( prompt("Enter a number !"));
+            arr.push(n)
+        }
+        function desc(a,b){return b-a};
+        function asc(a,b){return a-b};
+        document.write('<h2><font color="red">you have entered the values of </font>'+'<font color="gray">'+arr+'</font></h2>');
+        document.write('<h2><font color="red">ur values after being sorted descending </font>'+'<font color="gray">'+arr.sort(desc)+'</font></h2>');
+        document.write('<h2><font color="red">ur values after being sorted ascending </font>'+'<font color="gray">'+arr.sort(asc)+'</font></h2>');
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

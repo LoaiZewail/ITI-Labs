@@ -1,0 +1,200 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>2</title>
+    <style>
+        table{
+            border:2px solid black;
+            margin:10px auto;
+            width:600px;
+
+        }
+        input[type="text"],input[type="password"]
+        {
+            width:500px;
+        }
+        span{
+            font:bold 10px tahoma;
+            text-align:center;
+            color:red;
+            display:none;
+        }
+        .error{
+            border:2px solid red;
+        }
+        .succes{
+            border:2px solid green;
+        }
+        input[type="text"]:focus, input[type="password"]:focus{
+            outline:none;
+        }
+    </style>
+    <script>
+        window.addEventListener('load', function () {
+            // get all user input controls
+            username = document.getElementById('username');
+            country = document.getElementById('country');
+            zip = document.getElementById('zip');
+            useremail = document.getElementById('useremail');
+            hoppies = document.querySelectorAll("[type='checkbox']")
+
+            username.focus();
+            // spans
+            usernamespan = this.document.getElementById('usernamespan');
+            useremailspan = this.document.getElementById('useremailspan');
+            hoppySpan = document.getElementById("hoppyspan")
+
+            //country zip
+            country.addEventListener('click',function(){
+            switch (country.value){
+                case 'Egypt':
+                zip.value = '1111';
+                break;
+                case 'France':
+                zip.value = '2222';
+                break;
+                case 'USA':
+                zip.value = '3333';
+                break;
+                default:
+                break;
+            }})
+            // validate username
+            username.addEventListener('blur', function () {
+                if (!isusernamevalid()) {
+                    // show error message
+                    usernamespan.style.display = 'block';
+                    username.focus();
+                    username.select();
+                    username.className = 'error';
+                } else {
+                    usernamespan.style.display = 'none';
+                    username.className = 'succes';
+
+                }
+            });
+
+            //emailvalidator
+            useremail.addEventListener('blur', function () {
+                if (!isuseremailvalid()) {
+                    useremail.className = 'error';
+                    useremailspan.style.display = 'block';
+                    useremail.focus();
+                    useremail.select();
+                } else {
+                    useremail.className = 'succes';
+                    useremailspan.style.display = 'none';
+                }
+            });
+
+            // submit event
+            document.forms[0].addEventListener('submit', function (data) {
+                if (!(isuseremailvalid() && isusernamevalid()&& hoppiesValid())) {
+                    //prevnet default
+                    data.preventDefault();
+                }
+                if (!isuseremailvalid()){
+                    useremail.className = 'error';
+                    useremailspan.style.display = 'block';
+                    useremail.focus();
+                    useremail.select();
+                }
+                if (!isusernamevalid()) {
+                    username.className = 'error';
+                    usernamespan.style.display = 'block';
+                    username.focus();
+                    username.select();
+                }
+                if(!hoppiesValid()){
+                    hoppySpan.className = 'error';
+                    hoppySpan.style.display = 'block';
+    }
+            });//end of submit event
+
+            this.document.forms[0].addEventListener('reset', function (data) {
+
+                if (!confirm('Are You Sure To Clear Your Form ?')) {
+                    // prevent Default
+                    data.preventDefault();}
+                    else{
+                        username.focus();
+                    }
+                
+            });
+
+            window.oncontextmenu = function (e) { alert("You Can't Display Context Menu"); e.preventDefault(); }
+
+
+        });
+        function isusernamevalid() {
+            var usernamepattern = /^(?!\s*$).+/;
+            return username.value.match(usernamepattern);   
+        }
+        function isuseremailvalid() {
+            var emailExpr = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            return useremail.value.match(emailExpr);   
+        }
+        function hoppiesValid(){
+            for(i=0;i<hoppies.length;i++){
+            if(hoppies[i].checked){
+            hoppySpan.style.visibility = "hidden"; 
+            return (hoppies[i].checked) 
+            } else {
+            hoppySpan.style.visibility = "visible";
+            }
+        }
+        }
+    </script>
+</head>
+<body>
+    <form >
+        <table>
+            <tr>
+                <td rowspan="2">Name : </td>
+                <td><input type="text" id="username" placeholder="Enter your full name" /></td>
+            </tr>
+            <tr>
+                <td><span id="usernamespan">Name must not be empty</span></td>
+            </tr>
+            <tr>
+                <td rowspan="2">Country : </td>
+                <td><select name="country" id="country">
+                    <option name="country" value="Egypt">Egypt</option>
+                    <option name="country" value="France">France</option>
+                    <option name="country" value="USA">USA</option>
+                    </select></td>
+            </tr>
+            <tr>
+            </tr>
+            <tr>
+                <td rowspan="2">Zip : </td>
+                <td><input type="text" id="zip" disabled/></td>
+            </tr>
+            <tr>
+            </tr>
+            <tr>
+                <td rowspan="2">Email : </td>
+                <td><input type="text" id="useremail" /></td>
+            </tr>
+            <tr>
+                <td><span id="useremailspan">Incorrect user Email : user@domain.com</span></td>
+            </tr>
+            <tr>
+                <td rowspan="2">Hoppies : </td>
+                <td><input type="checkbox" name="hobby" value="writing">writing
+                    <input type="checkbox" name="hobby" value="reading">reading
+                    <input type="checkbox" name="hobby" value="swimming">swimming
+                    <input type="checkbox" name="hobby" value="sleeping">sleeping</td>
+            </tr>
+            <tr>
+                <td><span id="hoppyspan">Must select a hoppy</span></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Register" /></td>
+                <td><input type="reset" value="Clear" /></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

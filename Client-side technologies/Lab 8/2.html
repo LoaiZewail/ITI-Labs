@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>1</title>
+    <style>
+        table,tr,td{
+            border: 1px solid white;
+            text-align: center;
+        }
+        th{
+            background-color: red;
+            color: white;
+            border: 1px solid white;
+        }
+        table{
+            width:600px;
+            padding:10px;
+            margin:10px auto;
+        }
+        input[type=text]{
+            width: 318px;
+            padding: 7px;
+        }
+        input[type=button]{
+            padding: 10px;
+            color: white;
+            background-color: lightgrey;
+            border-radius: 10px;
+            border: none;
+            width: 65px;
+        }
+        div{
+            margin: 10px 19px;
+            padding-left: 34%;
+        }
+        h1{
+            text-align: center;
+            color: tomato;
+        }
+        img{
+            width: 10px;
+            height: 10px;
+        }
+        img:hover{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>To Do Organizer</h1>
+    <div>
+    <input type="text" id="text"/>
+    <input type="button" value="Add" />
+    </div>
+        <table id="tb1">
+            <tr>
+                <th>Done</th>
+                <th>Task</th>
+                <th>Delete</th>
+            </tr>
+        </table>
+    <script>
+        window.addEventListener('load', function () {
+            
+            usertext = document.getElementById('text');
+            targetbutton = document.querySelector("input[type='button']");
+            targetbutton.addEventListener('click', addnewrowfun);
+            targettable = this.document.getElementsByTagName('table')[0];
+
+        });
+        
+        i = 1;
+        function addnewrowfun() {
+            // create tr
+            var createtr = document.createElement('tr');
+            // create td for task
+            var createdtasktd = document.createElement('td');
+            createdtasktd.innerText = usertext.value;
+
+            // create td for done
+            var createddonetd = document.createElement('input');
+            createddonetd.type="checkbox";
+
+            // create td for delete
+            var createddeletetd = document.createElement('img');
+            createddeletetd.src = "1.jpg"
+
+            // append td inside tr
+            createtr.appendChild(createddonetd);
+            createtr.appendChild(createdtasktd);
+            createtr.appendChild(createddeletetd);
+
+            if (i % 2 == 0) {
+                createtr.style.backgroundColor = 'lightgray';
+            } else {
+                createtr.style.backgroundColor = 'white';
+            }
+
+            // append tr inside table
+            targettable.appendChild(createtr);
+            usertext.value = "";
+            usertext.focus();
+            i++;
+            //when done
+            createddonetd.addEventListener('click',dodone)
+            function dodone(){
+                if(createddonetd.checked){
+                createdtasktd.style.textDecoration="line-through"
+                }
+                else{
+                createdtasktd.style.textDecoration=""
+                }
+            }
+            //when delete
+            createddeletetd.addEventListener('click',dodelete)
+            function dodelete(){
+                if (confirm('R U Sure to delete this task ?')){
+                createtr.innerHTML=""
+                }
+            }
+        }
+    </script>
+</body>
+</html>

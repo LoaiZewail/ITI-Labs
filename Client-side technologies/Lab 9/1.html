@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+    <style>
+        span{
+            font-size: 22px;
+            font-weight: bold;
+        }
+        #d1{
+            margin: auto;
+            width: 35%;
+            height: 500px;
+            background-color: lightgrey;
+            padding: 35px;
+            overflow-y: auto;
+        }
+        input{
+            padding: 9px;
+        }
+        #d2{
+            margin: auto;
+            width: 97%;
+            background-color:white;
+            padding: 35px;
+        }
+    </style>
+</head>
+<body>
+    <div id="d1">
+        <span>News Types: </span>
+        <input type="radio" name="newst" value="sport"><span>sport</span>
+        <input type="radio" name="newst" value="social" ><span>social</span>
+        <input type="radio" name="newst" value="politic"><span>politic</span>
+    <div>
+        <input type="text" name="text" placeholder="add here">
+        <input type="button" name="add" value="Add">
+    </div>
+    <div>
+        <span>Search: </span>
+        <input type="text" name="search">
+    </div>
+    <table id="d2"></table>
+    </div>
+    <script>
+            window.addEventListener('load', function () {
+
+            radion = document.querySelectorAll("input[type='radio']");
+            newstxt = document.querySelector("input[name='text']");
+
+            targetbutton = document.querySelector("input[type='button']");
+            
+            targetbutton.addEventListener('click', addnewrowfun);
+            targettable = this.document.getElementsByTagName('table')[0];
+
+        });
+
+        function addnewrowfun() {
+            // create tr
+            var createtr = document.createElement('tr');
+            // create td news
+            var createdtexttd = document.createElement('td');
+            createdtexttd.innerText = newstxt.value;
+            // create td type
+            var createdtypetd = document.createElement('td');
+            // append two td inside tr
+            createtr.appendChild(createdtexttd);
+            createtr.appendChild(createdtypetd);
+            // append tr inside table
+            
+            for(radio in radion) {
+                radion[radio].onclick = function() {
+            switch(this.value) {
+                case 'sport':
+                createtr.style.backgroundColor = 'pink';
+                createdtypetd.innerText = this.value;
+                break;
+                case 'social':
+                createtr.style.backgroundColor = 'lightgray';
+                createdtypetd.innerText = this.value;
+                break;
+                case 'politic':
+                createtr.style.backgroundColor = 'lightgreen';
+                createdtypetd.innerText = this.value;
+                break;
+                default:
+                break;
+                }
+            }
+            }
+            
+        targettable.appendChild(createtr);
+        newstxt.value = "";
+        newstxt.focus();
+        }
+    </script>
+</body>
+</html>

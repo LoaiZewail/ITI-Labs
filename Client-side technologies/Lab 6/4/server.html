@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    
+</head>
+<body>
+
+    <script>
+
+        var hrefvalue = location.search;
+
+        var userinputs = hrefvalue.substring(1)
+
+        var userpairs = userinputs.split("&");
+
+        for (var i = 0; i < userpairs.length; i++) {
+            var splitedpairs = userpairs[i].split("=");
+
+            if (splitedpairs[0].toLowerCase() == "gender") {
+                if (splitedpairs[1].toLowerCase() == "m") {
+                    document.write('<img src="1.png" width=200px hight=200px>')
+                } else {
+                    document.write('<img src="1.png" width=200px hight=200px>')
+                }
+            }
+            if (i==0){
+                var st=splitedpairs[1];
+            }
+
+            if (i==userpairs.length-1){
+                var favcolor=splitedpairs[1];
+            }
+    }
+document.write('<h1> Welcome <font color="'+favcolor+'">'+st+'</font></h1>')
+
+    </script>
+</body>
+</html>

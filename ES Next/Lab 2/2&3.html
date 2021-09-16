@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        var title = 'Project';
+        var projectIdValue = 1;
+        var projectNameValue = 'egydev';       
+        var projectDurationValue = 2;
+
+        var project = {
+            [title+' ID']:projectIdValue,
+            [title+' Name']:projectNameValue,
+            [title+' Duration']:projectDurationValue,
+            ['print '+title+' content']:function() {
+                console.log(this[title+' ID'] +' , '+this[title+' Name']+' , '+this[title+' Duration']); }
+        }
+
+        let projectID = 1, projectName = "No Name", projectDuration = 5;
+        ({ [title+' ID']:projectID , [title+' Name']:projectName, [title+' Duration']:projectDuration} = project);
+
+        console.log(`Project ID = ${projectID} , Project Name = ${projectName} , Project Duration= ${projectDuration}`);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

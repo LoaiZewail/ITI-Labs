@@ -1,0 +1,44 @@
+
+*{
+    transition: 2s;
+}
+body {
+    padding-top: 10px;
+    margin-bottom: 20px;
+}
+.mainform{
+    padding: 10px;
+    width: 60vw;
+    height: auto;
+    border: 2px solid black;
+    border-radius: 20px;
+    background-color: blanchedalmond;
+    opacity: 0;
+}
+h1 ,#alarmmsg{
+    color: white;
+    font-size: 3rem;
+    font-weight: 900;
+}
+/* background */
+.container-fluid{
+    height: 100%;
+    width: 100%;
+    left:0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+    background-size: 1800% 1800%;
+    
+        animation: rainbow 18s ease infinite;}
+    
+    @keyframes rainbow { 
+        0%{background-position:0% 82%}
+        50%{background-position:100% 19%}
+        100%{background-position:0% 82%}
+    }
+.form-label{
+    font-weight: 500;
+}

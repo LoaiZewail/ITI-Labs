@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+            class Shape {
+            #Dim1=1;
+            #Dim2=1;
+            #Color="Red";
+            static counter=0;
+            constructor(_Dim1,_Dim2,_Color) {
+                if (new.target.name == "Shape") {
+                    throw "Abstract Class , You Can't Create An Object From It ...!!!!";
+                }
+                this.#Dim1 = _Dim1;
+                this.#Dim2 = _Dim2;
+                this.#Color = _Color;
+                Shape.counter++;
+            }
+
+            set Dim1(_Dim1) {
+                if (_Dim1 >= 1 && _Dim1 <= 20) {
+                    this.#Dim1 = _Dim1;
+                }
+                else { this.#Dim1 = 1; }
+            }
+            get Dim1() {
+                return this.#Dim1;
+            }
+
+            set Dim2(_Dim2) {
+                if (_Dim2 >= 1 && _Dim2 <= 20) {
+                    this.#Dim2 = _Dim2;
+                }
+                else { this.#Dim2 = 1; }
+            }
+            get Dim2() {
+                return this.#Dim2;
+            }
+
+            set Color(_Color) {
+                if (_Color.length >= 3) {
+                    this.#Color = _Color;
+                }
+                else { this.#Color = "Red"; }
+            }
+
+            get Color() {
+                return this.#Color;
+            }
+
+            Print() {
+                return `Dim1 = ${this.#Dim1} , Dim2 = ${this.#Dim2} , Color = ${this.#Color}`;
+            }
+
+            Calcarea() {
+                return `${this.#Dim1*this.#Dim2}`;
+            }
+
+        };
+
+        class Rectangle extends Shape {
+            #Dim1=1;
+            #Dim2=1;
+            #Dim3=1;
+            #Dim4=1;
+            constructor(_Dim1,_Dim2,_Color,_Dim3,_Dim4) {
+                super(_Dim1,_Dim2,_Color);
+                this.#Dim3 = _Dim3;
+                this.#Dim4 = _Dim4;
+            }
+
+            set Dim3(_Dim3) {
+                if (_Dim3 >= 1 && _Dim3 <= 20) {
+                    this.#Dim3 = _Dim3;
+                }
+                else { this.#Dim3 = 1; }
+            }
+
+            get Dim3() {
+                return this.#Dim3;
+            }
+            
+            set Dim4(_Dim4) {
+                if (_Dim4 >= 1 && _Dim4 <= 20) {
+                    this.#Dim4 = _Dim4;
+                }
+                else { this.#Dim4 = 1; }
+            }
+
+            get Dim4() {
+                return this.#Dim4;
+            }
+            
+            Print() {
+                return `${super.Print()} , Dim3 =  ${this.#Dim3} , Dim4 = ${this.#Dim4}`;
+            }
+
+            Calcarea() {
+                return `${this.#Dim1*this.#Dim2}`;
+            }
+        }
+
+        class Square extends Rectangle {
+            constructor(_Dim1,_Dim2,_Color,_Dim3,_Dim4) {
+                super(_Dim1,_Dim2,_Color,_Dim3,_Dim4);
+            }
+            Print() {
+                return `${super.Print()}`;
+            }
+            Calcarea() {
+                return `${super.Calcarea()}`;
+            }
+        }
+
+        class Triangle extends Shape {
+            #Dim1=1;
+            #Dim2=1;
+            #Dim3=1;
+            constructor(_Dim1,_Dim2,_Color,_Dim3) {
+                super(_Dim1,_Dim2,_Color);
+                this.#Dim3 = _Dim3;
+            }
+
+            set Dim3(_Dim3) {
+                if (_Dim3 >= 1 && _Dim3 <= 20) {
+                    this.#Dim3 = _Dim3;
+                }
+                else { this.#Dim3 = 1; }
+            }
+
+            get Dim3() {
+                return this.#Dim3;
+            }
+
+            Print() {
+                return `${super.Print()} , Dim3 =  ${this.#Dim3}`;
+            }
+
+            Calcarea() {
+                return `${.5*(((this.#Dim1+this.#Dim2+this.#Dim3)/2)*(((this.#Dim1+this.#Dim2+this.#Dim3)/2)-this.#Dim1)*(((this.#Dim1+this.#Dim2+this.#Dim3)/2)-this.#Dim2)*(((this.#Dim1+this.#Dim2+this.#Dim3)/2)-this.#Dim3))}`;
+            }
+        }
+
+        let rec1 = new Rectangle(5,5,"blue",5,5);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

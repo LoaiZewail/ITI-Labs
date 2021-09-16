@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+
+        var i=0;
+
+        let Person = class {
+
+            #ID=10;
+            #Name="No Name";
+            #Age=25
+            constructor(_id, _name, _age) {
+                this.#ID = _id;
+                this.#Name = _name;
+                this.#Age = _age;
+                i++
+            }
+
+           set ID(_id) {
+                if (_id >= 1 && _id <= 20) {
+                    this.#ID = _id;
+                }
+                else { this.#ID = 1; }
+            }
+            get ID() {
+                return this.#ID;
+            }
+    
+            set Name(_name) {
+                if (_name.length >= 3) {
+                    this.#Name = _name;
+                } else {
+                    this.#Name = "No Name";
+                }
+            }
+            get Name() {
+                return this.#Name;
+            }
+            set Age(_age) {
+                if (_age >= 20 && _age <= 30) {
+                    this.#Age = _age;
+                } else {
+                    this.#Age = 20;
+                }
+            }
+            get Age() {
+                return this.#Age;
+            }
+            Print() {
+                return `ID = ${this.#ID} , Name = ${this.#Name} , Age= ${this.#Age}`;
+            }
+
+            static count() {
+                return i;
+            }
+        };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

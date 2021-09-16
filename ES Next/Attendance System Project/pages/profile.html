@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="../bootstrap-5.0.1-dist/css/bootstrap.css" rel="stylesheet" />
+<link href="../style/profile_styles.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<title>Profile</title>
+</head>
+<body>
+
+
+<div class="container-fluid">
+
+    <div class="topnav">
+    <a href="#home" class="active">Attendance System</a>
+    <div id="myLinks">
+        <a href="#news" onclick="openhome()">Home</a>
+        <a href="#contact" onclick="openprofile()">Profile</a>
+        <a href="#about" onclick="openattendance()">Attendance</a>
+    </div>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+    </a>
+    </div>
+    <div class="text-center">
+        <label class="label1" for="validationCustom02">Search by User Name : </label>
+        <input class="text1 mx-auto" type="text" id="validationCustom02"/>
+    </div>
+    <div class="text-center">
+        <div class="fullrep mainform mx-auto" style="width: 80rem;">
+            <table class="table2 table table-bordered">
+                <tr class="trh">
+                    <th>UserName</th>
+                    <th>Attendance</th>
+                    <th>Late</th>
+                    <th>Excuse</th>
+                    <th>Absence</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+
+<script>
+
+</script>
+<script src="../script/profile_script.js"></script>
+</body>
+</html>

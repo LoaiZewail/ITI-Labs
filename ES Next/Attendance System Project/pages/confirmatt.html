@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="../bootstrap-5.0.1-dist/css/bootstrap.css" rel="stylesheet" />
+<link href="../style/confirmatt_styles.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>Confirm Attendance</title>
+<style>
+
+</style>
+</head>
+<body>
+
+
+<div class="container-fluid">
+<!-- nav bar -->
+    <div class="topnav">
+    <a href="#home" class="active">Attendance System</a>
+    <div id="myLinks">
+        <a href="#news" onclick="openhome()">Home</a>
+        <a href="#contact" onclick="openprofile()">Profile</a>
+        <a href="#about" onclick="openattendance()">Attendance</a>
+    </div>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+    </a>
+    </div>
+    <!-- confirm attendance form -->
+    <div class="row">
+        <div class="col-7 text-center mx-auto">
+            <div class="mainform mx-auto">
+                <form action="" method="" class="row g-3 " novalidate>
+                    <div class="col-12">
+                        <label for="validationCustom01" class="form-label">Employee Name : </label>
+                        <input type="text"  class="form-control" id="validationCustom01" placeholder="" readonly>
+                        </div>
+                        <div class="col-12">
+                        <label for="validationCustom02" class="form-label">Attendance Time : </label>
+                        <input type="text" class="form-control" id="validationCustom02" placeholder="" readonly>
+                        </div>
+
+                        <div class="col-12">
+                        <button class="btn btn-danger" onclick="closew()">Close</button>
+                    </div>
+                </form>
+            </div>
+        </div> 
+    </div>
+</div>
+
+
+<script>
+
+</script>
+<script src="../script/confirmatt_script.js"></script>
+</body>
+</html>

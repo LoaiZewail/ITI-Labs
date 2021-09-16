@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="../bootstrap-5.0.1-dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="../fonts/font-awesome.css" rel="stylesheet" />
+    <link href="../style/admin_styles.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <title>Login</title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col text-center mb-1">
+            <h1>Admin Panel</h1>
+            <button class="zz btn btn-primary" onclick="doallemp()">All Employees</button>
+            <button class="zz btn btn-primary" onclick="dofullrep()">Full Report</button>
+            <button class="zz btn btn-primary" onclick="dolaterep()">Late Report</button>
+            <button class="zz btn btn-primary" onclick="doexcrep()">Excuse Report</button>
+        </div>
+
+    </div>
+    <!-- form -->
+    <div class="row">
+        <div class="col text-center">
+            <div class="allemp mainform mx-auto" style="display: none; background-color: lightblue;">
+            <table class="table1 table table-bordered">
+                <tr>
+                    <th>Last Name</th>
+                    <th>Address</th>
+                    <th>First Name</th>
+                    <th>Email</th>
+                    <th>Age</th>
+                    <th>User Name</th>
+                </tr>
+            </table>
+            </div>
+            <div class="fullrep mainform mx-auto" style="display: none; background-color: lightcoral;">
+                <table class="table2 table table-bordered">
+                    <tr>
+                        <th>UserName</th>
+                        <th>Attendance</th>
+                        <th>Late</th>
+                        <th>Excuse</th>
+                        <th>Absence</th>
+                    </tr>
+                </table>
+            </div>
+            <div class="laterep mainform mx-auto" style="display: none; background-color: lightgreen">
+                <table class="table3 table table-bordered">
+                    <tr>
+                        <th>UserName</th>
+                        <th>Late</th>
+                    </tr>
+                </table>
+            </div>
+            <div class="excrep mainform mx-auto" style="display: none; background-color: lightslategrey;">
+                <table class="table4 table table-bordered">
+                    <tr>
+                        <th>UserName</th>
+                        <th>Excuse</th>
+                    </tr>
+                </table>
+            </div>
+            <button class="btn btn-danger mt-1" onclick="goback()">Back</button>
+        </div> 
+    </div>
+</div>
+
+<script>
+
+</script>
+    <script src="../script/admin_script.js"></script>
+    <script src="../bootstrap-5.0.1-dist/js/popper.js"></script>
+    <script src="../bootstrap-5.0.1-dist/js/bootstrap.js"></script>
+</body>
+</html>

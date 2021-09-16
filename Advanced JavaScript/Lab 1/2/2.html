@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2</title>
+
+    <script>
+        
+        var books = new Object(); //create object books
+        books.type = ['enlgish', 'arabic', 'romantic', 'animation'];
+        books.name = ['jakswa bridge', 'klanshkoof', 'a star is born', 'tom and jerry'];
+        // console.log(books.type[2]);
+
+        var box=new Object(); //create object box
+        box.books=books;   
+
+        console.log(books.name); //dispaly books name
+        console.log(books.type); //display books type
+
+        
+        for(var i=0; i<(books).length;i++){
+        }
+        console.log(books);// display number of books [name,type]
+
+        delete books.type[0];
+        console.log(books.type); //delete first element in array of books type
+
+        delete books.type;
+        delete books.name;
+        console.log(books.type); // delete all value of array of books.type
+        console.log(books.name); //delete all value of array of books.name
+
+        </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

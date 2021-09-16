@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2</title>
+    <script>
+            window.addEventListener('load', function () {
+            //1- create XHR Object
+            var xhr = new XMLHttpRequest();
+            var res = "";
+            // 2- register onreadystatechangeevent
+            xhr.onreadystatechange = function () {
+                //3- if(request complete dor not)
+                if (xhr.readyState == 4) {
+                    //4- make sure request is successful reauest
+                    if (xhr.status == 200) {
+                        // 5- read result suing responseText
+                        res = xhr.responseText;
+                        // console.log(res); // json
+                         jsobject = JSON.parse(res); // array
+                        // console.log(jsobject)
+                        /////
+                        var num = document.getElementById('num');
+                        var band = document.getElementById('band');
+                        var artname = document.getElementById('artname');
+                        /////
+                        num.innerText = Object.keys(jsobject).length;
+                        /////
+                        for (var i = 0; i < Object.keys(jsobject).length; i++) {
+                            var createop1 = document.createElement('option');
+                            createop1.innerText = Object.keys(jsobject)[i];
+                            band.appendChild(createop1)
+                        }
+
+
+
+                        band.addEventListener('change', function(){
+                            
+                            // console.log(jsobject[this.value])
+                        artname.innerText=""
+                        for( var data in jsobject[this.value]){
+                        var createop2 = document.createElement('option');
+                        createop2.innerText = jsobject[this.value][data].name
+                        console.log(jsobject[this.value][data].name)
+                            ///
+                            createop2.setAttribute("value"," "+jsobject[this.value][data].value+" ")
+                            var op3 = document.createElement("option");
+                            op3.innerText =jsobject[this.value][data].value
+                            op3.classList.add("hide")
+                            ///
+                            artname.append(createop2)
+                            artname.append(op3)
+                        }
+                        })
+
+                        artname.addEventListener('change', function(){
+
+                            window.open(artname.value)
+                        })
+
+                    }
+                }
+            };//end of event on readystatechange
+            xhr.open("GET", "rockbands.json", true);
+            xhr.send("");
+
+        });
+    </script>
+    <style>
+        .hide{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Number of bands : </h1>
+    <h1 id="num"></h1>
+    <select id="band"></select>
+    <select id="artname"></select>
+</body>
+</html>

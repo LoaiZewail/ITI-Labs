@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1.2</title>
+    <script>
+
+            function Shape(_Dim1,_Dim2,_Color) {
+            if (this.constructor == Shape) {
+                throw "Abstract Class : You Can't Create An object"
+            }
+            this.Dim1 = _Dim1;
+            this.Dim2 = _Dim2;
+            this.Color = _Color;
+        }
+        Shape.prototype.PrintData = function () { return "Dim1 : " + this.Dim1 + "Dim2 : " + this.Dim2 + "Color : " + this.Color; }
+
+        function Rectangle (_Dim1,_Dim2,_Color) {
+            Shape.call(this,_Dim1,_Dim2,_Color);
+        }
+        Rectangle.prototype.CalcArea = function () { return "Rectangle Area : " + this.Dim1 * this.Dim2}
+        Rectangle.prototype.toString= function () {
+                return "Rec******* " +this.CalcArea()+" *******";}
+
+        function Triangle (_Dim1,_Dim2,_Color,_Dim3) {
+            Shape.call(this,_Dim1,_Dim2,_Color);
+            this.Dim3 = _Dim3
+        }
+        Triangle.prototype.CalcArea = function () {
+            var s=(this.Dim1+this.Dim2+this.Dim3)/2;
+            var a=.5*(s*(s-this.Dim1)*(s-this.Dim2)*(s-this.Dim3))
+            return "Triangle Area : " + a}
+            
+        Triangle.prototype.toString= function () {
+                return "Tri******* " +this.CalcArea()+" *******";}
+                
+                var rec = new Rectangle(3,3,"red");
+                var tri = new Triangle(3,4,"blue",5);
+                
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

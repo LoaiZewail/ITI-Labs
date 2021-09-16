@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        div,ul,li{
+            border:2px solid black;
+            padding:10px;
+            list-style: none;
+        }
+        ul:nth-child(odd){
+            background-color:lightyellow;
+        }
+            ul:nth-child(even) {
+                background-color: lightpink;
+            }
+        div{
+            width:50%;
+            margin:10px auto;
+        }
+        h1{
+            margin: auto;
+            text-align: center;
+            border: 3px groove tomato;
+        }
+    </style>
+    <script>
+        window.addEventListener('load', function () {
+            //1- create XHR Object
+            var xhr = new XMLHttpRequest();
+            var res = "";
+            // 2- register onreadystatechangeevent
+            xhr.onreadystatechange = function () {
+                //3- if(request complete dor not)
+                if (xhr.readyState == 4) {
+                    //4- make sure request is successful reauest
+                    if (xhr.status == 200) {
+                        // 5- read result suing responseText
+                        res = xhr.responseText;
+                        //console.log(res);
+                        //console.log(res); // json
+                        var jsobject = JSON.parse(res); // array
+
+                        var h1=document.getElementsByTagName('h1')[0]
+                        h1.innerText=jsobject.length
+                        //1- create div using document.createELement("div");
+                        var creatediv = document.createElement('div');
+                        for (var i = 0; i < jsobject.length; i++) {
+                            // create ul
+                            var createdul = document.createElement('ul');
+                            for (var data in jsobject[i]) {
+                                var li = document.createElement('li');
+                                li.innerText = jsobject[i][data];
+                                createdul.appendChild(li);
+                            }
+                            creatediv.appendChild(createdul);
+                        }
+                        document.body.appendChild(creatediv);
+
+
+                        /*console.log(jsobject[0].Name);*/
+                        //document.getElementsByTagName('div')[0].innerText = res;
+                    }
+                }
+
+            };//end of event on readystatechange
+            /*xhr.open("GET", "studentsdata.json", true);*/
+            xhr.open("GET", "https://jsonplaceholder.typicode.com/posts", true);
+            xhr.send("");
+
+        });
+    </script>
+</head>
+<body>
+    <h1></h1>
+    
+</body>
+</html>

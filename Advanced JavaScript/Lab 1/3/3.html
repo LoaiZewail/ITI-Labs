@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3</title>
+    <script>
+
+        function myFun (){
+
+            //1
+            var temp = [].slice.call(arguments).reverse();
+            console.log(eval(temp));
+
+            //2
+            for (var i = 0; i < arguments.length; i++) {
+                if(arguments[i]%2!==0)
+                    console.log (arguments[i])
+            }
+
+            //3
+            console.log(Math.min.apply(null,arguments));
+            console.log(Math.max.apply(null,arguments));
+
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

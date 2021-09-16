@@ -1,0 +1,15 @@
+@mixin mymixin($borderthikness:3px,$borderstyle:solid,$backgroundcolor:red) {
+    border:$borderthikness $borderstyle;
+    background-color: $backgroundcolor;
+}
+
+
+#one{
+    @include mymixin($borderstyle:dotted,$backgroundcolor: cyan);
+}
+#two{
+    @include mymixin($backgroundcolor: red);
+}
+#three{
+    @include mymixin($backgroundcolor: green);
+}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3</title>
+    <script src="jq.js"></script>
+    <style>
+        span{
+            font-size: 22px;
+            font-weight: bold;
+        }
+        #d1{
+            margin: auto;
+            width: 35%;
+            height: 500px;
+            background-color: lightgrey;
+            padding: 35px;
+            overflow-y: auto;
+        }
+        input{
+            padding: 9px;
+        }
+        #d2{
+            margin: auto;
+            width: 97%;
+            background-color:white;
+            padding: 35px;
+        }
+        .social{
+            background-color: pink;
+        }
+        .sport{
+            background-color: lightgreen;
+        }
+        .politic{
+            background-color: lightgrey;
+        }
+    </style>
+</head>
+<body>
+    <div id="d1">
+        <span>News Types: </span>
+        <input type="radio" name="newst" value="sport"><span>sport</span>
+        <input type="radio" name="newst" value="social" ><span>social</span>
+        <input type="radio" name="newst" value="politic"><span>politic</span>
+    <div>
+        <input type="text" name="text" placeholder="add here">
+        <input type="button" name="add" value="Add">
+    </div>
+    <div>
+        <span>Search: </span>
+        <input type="text" name="search">
+    </div>
+    <table id="d2"></table>
+    </div>
+    <script>
+
+        $(function(){
+
+            // $(":radio").each(function(){
+            //     // console.log($(this).val())
+            //     if($("input[type='radio']:checked",false)){
+            //         // console.log($("input[type='radio']").val());
+            //         console.log($(this).val());
+            //         switch($(this).val()){
+            //             case "sport":
+            //             $("input[type='button']").click(function(){
+            //                 $("#d2").append("<tr><td>"+$(":text:first").val()+"</td><td>sport</td></tr>");
+            //                 $("tr").addClass("sport");
+            //                 $(":text:first").val("");
+            //             });
+            //             break;
+            //             case "social":
+            //             $("input[type='button']").click(function(){
+            //                 $("#d2").append("<tr><td>"+$(":text:first").val()+"</td><td>social</td></tr>");
+            //                 $("tr").addClass("social");
+            //                 $(":text:first").val("");
+            //             });
+            //             break;
+            //             case "politics":
+            //             $("input[type='button']").click(function(){
+            //                 $("#d2").append("<tr><td>"+$(":text:first").val()+"</td><td>politics</td></tr>");
+            //                 $("tr").addClass("politics");
+            //                 $(":text:first").val("");
+            //             });
+            //             break;
+            //         }
+            //     }
+            // });
+
+                $("input[type='button']").click(function (){
+                    $("#d2").append("<tr><td>"+$(":text:first").val()+"</td><td>"+$('input[name=newst]:checked', '#d1').val()+"</td></tr>");
+                    $("tr:last").removeClass();
+                    $("tr:last").addClass(""+$('input[name=newst]:checked', '#d1').val()+"");
+                    $(":text:first").val("");
+                    $(":text:first").focus();
+                });
+
+                $(":text:last").keyup(function () {
+                // $(this).val()
+                var uservalue = $(this).val();
+                $("tr").each(function () {
+                    //$(this)=> current iterated tr
+                    var currentvalue = $(this).children("td:first").text();
+                    if (currentvalue.toLowerCase() .indexOf(uservalue.toLowerCase()) != -1) {
+                        //exist
+                    /*$(this).show(1000);*/
+                        $(this).css("color", "green").fadeIn(1000);
+                    } else {
+                        $(this).css("color","red").fadeOut(1000);
+                    }
+
+                });//end of each for tr
+
+
+            });//end of keyup
+
+            })
+
+    </script>
+</body>
+</html>

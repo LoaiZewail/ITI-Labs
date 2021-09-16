@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        td{
+            border:1px solid black;
+        }
+    </style>
+    <script src="jq.js"></script>
+    <script>
+        $(function () {
+            $(":radio:eq(0)").click(function(){
+                $(":text:first").keyup(function () {
+                // $(this).val()
+                var uservalue = $(this).val();
+                $("tr").each(function () {
+                    //$(this)=> current iterated tr
+                    var currentvalue = $(this).children("td:first").text();
+                    if (currentvalue.toLowerCase() .indexOf(uservalue.toLowerCase()) != -1) {
+                        //exist
+                    /*$(this).show(1000);*/
+                        $(this).css("color", "green").fadeIn(1000);
+                    } else {
+                        $(this).css("color","red").fadeOut(1000);
+                    }
+
+                });//end of each for tr
+
+
+            });//end of keyup
+
+            })
+
+            $(":radio:eq(1)").click(function(){
+                $(":text:first").keyup(function () {
+                // $(this).val()
+                var uservalue = $(this).val();
+                $("tr").each(function () {
+                    //$(this)=> current iterated tr
+                    var currentvalue = $(this).children("td:last").text();
+                    if (currentvalue.toLowerCase() .indexOf(uservalue.toLowerCase()) != -1) {
+                        //exist
+                    /*$(this).show(1000);*/
+                        $(this).css("color", "green").fadeIn(1000);
+                    } else {
+                        $(this).css("color","red").fadeOut(1000);
+                    }
+
+                });//end of each for tr
+
+
+            });//end of keyup
+
+            })
+
+            $(":radio:eq(2)").click(function(){
+                $(":text:first").keyup(function () {
+                // $(this).val()
+                var uservalue = $(this).val();
+                $("tr").each(function () {
+                    //$(this)=> current iterated tr
+                    var currentvalue = $(this).children("td").text();
+                    if (currentvalue.toLowerCase() .indexOf(uservalue.toLowerCase()) != -1) {
+                        //exist
+                    /*$(this).show(1000);*/
+                        $(this).css("color", "green").fadeIn(1000);
+                    } else {
+                        $(this).css("color","red").fadeOut(1000);
+                    }
+
+                });//end of each for tr
+
+
+            });//end of keyup
+
+            })
+
+
+        });//end of load
+    </script>
+</head>
+<body>
+    <input type="text"/>
+    <input type="radio" name="filtype" value="one"> Filter Using First Name
+    <input type="radio" name="filtype" value="twp"> Filter Using Last Name
+    <input type="radio" name="filtype" value="three"> Filter Using Any Data
+    <table>
+        <tr>
+            <th>FirstName</th>
+            <th>LastName</th>
+        </tr>
+        <tr>
+            <td>Ahmed</td>
+            <td>Moustafa</td>
+        </tr>
+        <tr>
+            <td>Moustafa</td>
+            <td>Ibraheem</td>
+        </tr>
+        <tr>
+            <td>Eman</td>
+            <td>Ahmed</td>
+        </tr>
+        <tr>
+            <td>Sarah</td>
+            <td>Kareem</td>
+        </tr>
+    </table>
+</body>
+</html>

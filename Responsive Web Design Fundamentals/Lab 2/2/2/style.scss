@@ -1,0 +1,22 @@
+$usedcolor1 : blue;
+$usedcolor2 : white;
+
+*{
+    padding: 0;
+    margin: 0;
+}
+@mixin mymixin ($usedcolor1 : white, $usedcolor2 : black ) {
+    color: $usedcolor1;
+    background-color: $usedcolor2;
+    border: 2px solid blue;
+}
+header{
+    color: $usedcolor1;
+    background-color: $usedcolor2;
+    border: 2px solid $usedcolor1;
+    padding: 20px;
+}
+#content, footer{
+    @include mymixin();
+    padding: 20px;
+}

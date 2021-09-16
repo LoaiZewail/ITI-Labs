@@ -1,0 +1,42 @@
+*{
+    padding:0;
+    margin:0;
+}
+
+@mixin gridcolumns ($numberofcolumns,$screenname,$screenwidth) {
+
+    @media screen and (min-width:$screenwidth*1px){
+            @for $i from 1 through $numberofcolumns {
+                .col-#{$screenname}-#{$i}{
+                    width:100/($numberofcolumns/$i)*1%;
+                }
+                .offset-#{$screenname}-#{$i}{
+                    margin-left:100/($numberofcolumns/$i)*1%;
+                }
+            }
+            .hidden-#{$screenname}{
+                display:none !important;
+            }
+            .show-#{$screenname}{
+                display:block !important;
+            }
+        }
+    }
+
+
+.container{
+    width:100%;
+}
+.row{
+    display:flex;
+    flex-wrap: wrap;
+    width:100%;
+}
+
+
+@include gridcolumns(12,"xs",0);
+@include gridcolumns(12,"sm",576);
+@include gridcolumns(12,"md",767);
+@include gridcolumns(12,"lg",991);
+@include gridcolumns(12,"xl",1199);
+@include gridcolumns(12,"xxl",1399);

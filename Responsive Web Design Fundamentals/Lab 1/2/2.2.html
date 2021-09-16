@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.2</title>
+    <script src="jq.js"></script>
+    <script>
+        $(function (){
+
+            $("ul").on({
+            "click": function () {$("ul").append($(this).clone());},
+            }, "li");
+
+        });
+    </script>
+    <style>
+        #red ,#yellow, #cyan{
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        ul{
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+        <ul><div id="main">
+            <li><div id="red" style="background-color: red;"></div></li>
+            <li><div id="yellow" style="background-color: yellow;"></div></li>
+            <li><div id="cyan" style="background-color: cyan;"></div></li>
+        </div></ul>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link href="../../RWFD004/Lecture Demos/css/bootstrap.css" rel="stylesheet" />
+    <link href="../../RWFD004/Lecture Demos/css/font-awesome.css" rel="stylesheet" />
+    <style>
+        body {
+            padding-top: 10px;
+        }
+        #navbar-example2{
+            position: relative;
+        }
+        .scrollspy-example{
+            height: 500px;
+            overflow-y: scroll;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="col-4">
+        <nav id="navbar-example2" class="navbar navbar-light bg-light px-3">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link" href="#scrollspyHeading1">First</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#scrollspyHeading2">Second</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Dropdown</a>
+                <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#scrollspyHeading3">Third</a></li>
+                <li><a class="dropdown-item" href="#scrollspyHeading4">Fourth</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#scrollspyHeading5">Fifth</a></li>
+                </ul>
+            </li>
+            </ul>
+        </nav>
+        <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example" tabindex="0">
+            <h4 id="scrollspyHeading1">First heading</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae error consectetur ea nesciunt, dolorum cum accusantium ipsum assumenda laboriosam obcaecati totam optio exercitationem ab eum nam odit nulla minima explicabo?</p>
+            <h4 id="scrollspyHeading2">Second heading</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi maxime tenetur magnam, iure mollitia reiciendis harum perferendis id deserunt debitis adipisci labore ipsum fuga similique exercitationem earum iusto nemo dignissimos.</p>
+            <h4 id="scrollspyHeading3">Third heading</h4>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis, natus aut reiciendis ab, laudantium tempore ipsam deleniti numquam at nihil ducimus atque ratione consequatur aliquid aliquam tempora iure maiores repudiandae?</p>
+            <h4 id="scrollspyHeading4">Fourth heading</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga aliquid, mollitia exercitationem laborum corrupti dolorum natus vel, voluptatem, possimus nulla qui architecto! Nihil magni alias esse quos natus error dignissimos!</p>
+            <h4 id="scrollspyHeading5">Fifth heading</h4>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis debitis officiis vitae cumque maxime at quaerat doloremque, obcaecati fuga, architecto eos. Modi commodi laudantium quos consequuntur ratione officiis tenetur itaque.</p>
+        </div>
+        </div>
+</div>
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <script src="../../RWFD004/Lecture Demos/js/JQuery-3.3.1.min.js"></script>
+    <script src="../../RWFD004/Lecture Demos/js/popper.js"></script>
+    <script src="../../RWFD004/Lecture Demos/js/bootstrap.js"></script>
+</body>
+</html>

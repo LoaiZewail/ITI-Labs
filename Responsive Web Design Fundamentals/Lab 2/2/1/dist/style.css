@@ -1,0 +1,14 @@
+#one {
+  border: 3px dotted;
+  background-color: cyan;
+}
+
+#two {
+  border: 3px solid;
+  background-color: red;
+}
+
+#three {
+  border: 3px solid;
+  background-color: green;
+}

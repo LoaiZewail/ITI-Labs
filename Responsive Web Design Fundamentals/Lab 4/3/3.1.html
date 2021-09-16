@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link href="../../RWFD004/Lecture Demos/css/bootstrap.css" rel="stylesheet" />
+    <link href="../../RWFD004/Lecture Demos/css/font-awesome.css" rel="stylesheet" />
+    <style>
+        body {
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="row mt-5">
+            <a id="popover" class="btn" rel="popover" data-content="" title="Popover with image">Popover button</a>
+        </div>
+    </div>
+
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <script src="../../RWFD004/Lecture Demos/js/JQuery-3.3.1.min.js"></script>
+    <script src="../../RWFD004/Lecture Demos/js/popper.js"></script>
+    <script src="../../RWFD004/Lecture Demos/js/bootstrap.js"></script>
+    <script>
+        $(document).ready(function() {
+        var image = '<img src="../../RWFD004/Lecture Demos/UP/1.jpg">';
+        $('#popover').popover({
+            placement: 'bottom',
+            content: image,
+            html: true
+        });
+        });
+    </script>
+</body>
+</html>

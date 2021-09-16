@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4</title>
+    <script src="jq.js"></script>
+</head>
+<style>
+ul{
+    border: 2px solid black;
+    width: 300px;
+    height: 200px;
+    overflow-y:auto;
+    display: inline-block;
+    padding: 40px;
+}
+#one{
+    margin: 10px 11%;
+}
+#two{
+    margin: 5% 35%;
+}
+.selected1{
+    border: 1px solid tomato;
+    background-color: lightslategray;
+}
+.selected2{
+    border: 1px solid tomato;
+    background-color: lightslategray;
+}
+li{
+    width: 150px;
+}
+li:hover{
+    border: 2px solid tomato;
+    cursor: pointer;
+}
+</style>
+<body>
+    <div id="one">
+    <ul id="ulone"></ul>
+    <ul id="ultwo"></ul>
+    </div>
+    <div id="two">
+    <input type="button" name="right" value="&lt;">
+    <input type="button" name="left" value="&gt;">
+    </div>
+    Add course <input type="text" name="text">
+    <input type="button" value="add" name="add">
+    <script>
+
+        $(function(){
+
+            $("input[name='add']").click(function(){$("#ulone").append ("<li>"+$("input[name='text']").val()+"</li>")})
+
+            $("#ulone").on({"click": function () { $(this).addClass("selected1"); }},"li");
+
+            $("#ultwo").on({"click": function () { $(this).addClass("selected2"); }},"li");
+
+            $("input[name='left']").on({"click": function (){ 
+                                                            for (var i = 0; i < $(".selected1").length; i++) {
+                                                                $("#ultwo").append("<li>"+$(".selected1")[i].innerText+"</li>")
+                                                            }
+            }});
+
+            $("input[name='right']").on({"click": function (){ 
+                                                            for (var i = 0; i < $(".selected2").length; i++) {
+                                                                $("#ulone").append("<li>"+$(".selected2")[i].innerText+"</li>")
+                                                            }
+            }});
+
+        })//end""
+
+    </script>
+</body>
+</html>

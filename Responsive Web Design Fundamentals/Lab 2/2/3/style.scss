@@ -1,0 +1,15 @@
+
+@for $i from 1 through 3 {
+    .p#{$i}{
+        font-size:100-$i*10px;
+    }
+}
+.p1{
+    color: rosybrown;
+}
+.p2{
+    color: salmon;
+}
+.p3{
+    color: seagreen;
+}

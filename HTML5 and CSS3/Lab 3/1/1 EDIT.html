@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+    <style>
+            *{
+            padding: 0px;
+            margin: 0px;
+            transition: 2s;
+            }
+            #maindiv{
+            width: 80%;
+            height: 500px;
+            border: 2px solid black;
+            border-radius: 25px;
+            padding: 5px;
+            margin: 40px auto;
+            box-shadow: rgb(255, 151, 132) 50px 50px 50px inset, rgb(255, 151, 132) -50px -50px 50px inset;
+            transition: transform 2s ;
+            }
+            #internal{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding:15px;
+            }
+            video{
+                width: 80%;
+                height: 80%;
+                border: 2px solid black;
+                border-radius: 50px;
+                margin: auto;
+                display: none;
+            }
+            #left{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 15px;
+            width: 150px;
+            height: 420px;
+            margin: 10px 10px 10px 10px;
+            border: 2px solid black;
+            border-radius: 25px;
+            box-shadow: rgb(255, 151, 132) 50px 50px 50px inset, rgb(255, 151, 132) -50px -50px 50px inset;
+            }
+            #right{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            width: 800px;
+            height: 420px;
+            margin: 10px 10px 10px 0;
+            border: 2px solid black;
+            border-radius: 25px;
+            box-shadow: rgb(255, 151, 132) 50px 50px 50px inset, rgb(255, 151, 132) -50px -50px 50px inset;
+            }
+            input{
+                width: 100%;
+                height: 40px;
+                border: 2px groove blue;
+                background-color: white;
+                border-radius: 10px;
+            }
+            input:hover{
+                transform: rotate(360deg);
+            }
+            #left:hover{
+                background-color: rgb(255, 164, 59);
+                box-shadow: none;
+            }
+            video:hover{
+                width: 100%;
+                height: 100%;
+            }
+            .active{
+                background-color: cyan;
+            }
+            .nactive{
+                background-color: white;
+            }
+    </style>
+    <script>
+            window.addEventListener('load', function () {
+
+            myvideo = document.getElementById('myvideo');
+
+            mybtn = document.querySelectorAll('input[type=button]')
+
+            myvideo.addEventListener('click',playpausefun);
+            myvideo.addEventListener('dblclick',fullscreenf);
+            for (var i = 0; i < mybtn.length; i++) {
+                mybtn[i].addEventListener('click',playvid)
+            }
+            
+        });
+
+        function playvid(e){
+            e.target.classList.add('active');
+            oldselected = document.getElementsByClassName('active')[0];
+            if(oldselected!=null)
+
+            oldselected.classList.remove('active');
+            newclicked = e.target;
+            newclicked.classList.add('active');
+
+            selectvideo(e);
+        }
+        function playpausefun() {
+            if (myvideo.paused) {
+                myvideo.play();
+            } else {
+                myvideo.pause();
+            }
+        }
+        function fullscreenf(){
+            myvideo.requestFullscreen();
+        }
+        function selectvideo(e){
+            myvideo.src=(e.target.name)
+            myvideo.style.display='block'
+        }
+    </script>
+</head>
+<body>
+    <div id="maindiv">
+        <div id="internal">
+        <section id="left">
+            <input type="button" value="Video 1" name="vid/1.mp4">
+            <input type="button" value="Video 2" name="vid/2.mp4">
+            <input type="button" value="Video 3" name="vid/3.mp4">
+            <input type="button" value="Video 4" name="vid/4.mp4">
+            <input type="button" value="Video 5" name="vid/5.mp4">
+            <input type="button" value="Video 6" name="vid/6.mp4">
+            <input type="button" value="Video 7" name="vid/7.mp4">
+            <input type="button" value="Video 8" name="vid/8.mp4">
+            <input type="button" value="Video 9" name="vid/9.mp4">
+            <input type="button" value="Video 10" name="vid/10.mp4">
+        </section>
+        <section id="right">
+            <video id="myvideo">
+                <source src="vid/1.mp4">
+                <source src="vid/2.mp4">
+                <source src="vid/3.mp4">
+                <source src="vid/4.mp4">
+                <source src="vid/5.mp4">
+                <source src="vid/6.mp4">
+                <source src="vid/7.mp4">
+                <source src="vid/8.mp4">
+                <source src="vid/9.mp4">
+                <source src="vid/10.mp4">
+            </video>
+        </section>
+        </div>
+    </div>
+</body>
+</html>

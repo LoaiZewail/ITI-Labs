@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            user-select: none;
+        }
+        #toolbar{
+            position: fixed;
+            top: 0;
+            background-color: brown;
+            color: white;
+            font: bold 15px  tahoma;
+            width: 100%;
+            display: -webkit-box;
+            -webkit-box-align: center;
+            padding: 10px;
+        }
+        #radiusbar{
+            /* border: 2px solid yellow; */
+            width: 200px;
+            padding: 10px;
+        }
+        .incredecre , #radiusvalue,#savebtn {
+            /* border: yellow 1px solid; */
+            padding: 8px 7px;
+            border-radius: 50%;
+            margin-left: 10px;
+            box-shadow: red 5px 5px 10px inset, blue -5px -5px 10px inset;
+        }
+        .incredecre:hover , #savebtn:hover{
+            cursor: pointer;
+            box-shadow: red -5px -5px 10px inset, blue 5px 5px 10px inset;
+        }
+        #savebar{
+            width: 300px;
+            /* border: 2px solid yellow; */
+            margin-left: 30px;
+        }
+        #savebtn{
+            margin-left: 250px;
+        }
+        #colorsbar{
+            /* border: 2px solid yellow; */
+            width: 600px;
+            margin-left: 50px;
+            padding: 10px;
+            display: -webkit-box;
+            -webkit-box-align: center;
+        }
+        .colors{
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            margin-left: 10px;
+        }
+        .active{
+            border: 2px solid white;
+        }
+    </style>
+    <script>
+        window.addEventListener('load',doitfirst)
+        function doitfirst(){
+            //canvas
+            mycanvas = document.getElementById('mycanvas');
+            mycontext = mycanvas.getContext('2d');
+            mycanvas.width = window.innerWidth;
+            mycanvas.height = window.innerHeight;
+            // regestration for canvas events
+            // mycanvas.addEventListener('mousedown' , drawcircle);
+            isdraw = false;
+            mycanvas.addEventListener('mousemove' , drawcircle);
+            mycanvas.addEventListener('mousedown' , enabledrawing);
+            mycanvas.addEventListener('mouseup' , disabledrawing);
+            // 1- get context
+            //radius
+            radius = 10;
+            incre = document.getElementById('incre');
+            decre = document.getElementById('decre');
+            radiusvalue = document.getElementById('radiusvalue');
+            incre.addEventListener('click',increaser);
+            decre.addEventListener('click',decreaser);
+            // save
+            //////////////////
+            // colors
+            // allcolors=document.querySelectorAll('.colors');
+            // for (var i = 0; i < allcolors.length; i++) {
+            //     allcolors[i].addEventListener('click',changecolor);
+            //     if(allcolors[i].style.backgroundColor==localStorage.getItem('selectedcolor')){
+            //         allcolors[i].className += ' active ';
+            //         mycontext.fillStyle=allcolors[i].style.backgroundColor;
+            //     }
+            // }
+            //////////////////
+            colorsbar = document.getElementById('colorsbar');
+                allcolors = ['red','blue','green','yellow','cyan','lightgray','gray','magenta','lightgreen','tomato' ];
+                for (var i = 0; i < allcolors.length; i++) {
+                    createddiv= document.createElement('div');
+                    createddiv.style.backgroundColor = allcolors[i];
+                    createddiv.addEventListener('click', changecolor);
+                    createddiv.className = 'colors';
+                    if(allcolors[i]==localStorage.getItem('selectedcolor')){
+                        createddiv.className += ' active ';
+                        mycontext.fillStyle=allcolors[i];
+                    }
+                    colorsbar.appendChild(createddiv);
+                }
+
+
+        }
+        function changecolor(e) {
+            oldselected = document.getElementsByClassName('active')[0];
+            if(oldselected!=null)
+            oldselected.className ='colors';
+            newclicked = e.target;
+            newclicked.className += ' active ';
+            mycontext.fillStyle = newclicked.style.backgroundColor;
+            localStorage.setItem('selectedcolor' , newclicked.style.backgroundColor);
+        }
+        function increaser() {
+            radius++
+            checkradius(radius);
+        }
+        function decreaser() {
+            radius--
+            checkradius(radius);
+        }
+        function checkradius(newradius) {
+            if(newradius>50)
+            newradius=50;
+            else if(newradius<10)
+            newradius=10;
+            radius=newradius;
+            radiusvalue.innerText = radius;
+        }
+        function enabledrawing() {
+            isdraw =true;
+        }
+        function disabledrawing() {
+            isdraw =false;
+        }
+        function drawcircle(e) {
+            if(isdraw){
+            mycontext.beginPath();
+            mycontext.arc(e.clientX,e.clientY,radius,0,Math.PI*2);
+            mycontext.fill();
+            mycontext.closePath();
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="toolbar">
+        <div id="radiusbar">
+            <label>Radius</label>
+            <span id="radiusvalue">10</span>
+            <span id="incre" class="incredecre">+</span>
+            <span id="decre" class="incredecre">-</span>
+        </div>
+        <div id="savebar">
+            <span id="savebtn">Save</span>
+        </div>
+        <div id="colorsbar">
+            <!-- <div class="colors" style="background-color: red;"></div>
+            <div class="colors" style="background-color: blue;"></div>
+            <div class="colors" style="background-color: green;"></div>
+            <div class="colors" style="background-color: yellow;"></div>
+            <div class="colors" style="background-color: cyan;"></div>
+            <div class="colors" style="background-color: gray;"></div>
+            <div class="colors" style="background-color: magenta;"></div>
+            <div class="colors" style="background-color: pink;"></div>
+            <div class="colors" style="background-color: lightgreen;"></div> -->
+        </div>
+    </div>
+    <canvas id="mycanvas" style="display: block;">
+        Sorry , Update your browser and try again !
+    </canvas>
+</body>
+</html>

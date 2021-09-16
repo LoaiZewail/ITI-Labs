@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+            *{
+            padding: 0px;
+            margin: 0px;
+            transition: 2s;
+            }
+            #maindiv{
+            width: 80%;
+            height: 100%;
+            border: 2px solid black;
+            border-radius: 25px;
+            padding: 5px;
+            margin: 40px auto;
+            box-shadow: rgb(255, 151, 132) 50px 50px 50px inset, rgb(255, 151, 132) -50px -50px 50px inset;
+            transition: transform 2s ;
+            }
+            #internal{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding:15px;
+            }
+            #top{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            width: 100%;
+            height: 50px;
+            margin: 10px 10px 10px 10px;
+            border: 2px solid black;
+            border-radius: 25px;
+            box-shadow: rgb(255, 151, 132) 50px 50px 50px inset, rgb(255, 151, 132) -50px -50px 50px inset;
+            }
+            #bottom{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            width: 100%;
+            height: 100%;
+            margin: 10px 10px 10px 0;
+            border: 2px solid black;
+            border-radius: 25px;
+            box-shadow: rgb(255, 151, 132) 50px 50px 50px inset, rgb(255, 151, 132) -50px -50px 50px inset;
+            }
+        #mymap {
+            display: none;
+            width: 600px;
+            height: 600px;
+        }
+        input[type=button]{
+            width: 200px;
+            height: 50px;
+            color: white;
+            background-color: rgb(1, 192, 192);
+            font: bold 20px tahoma;
+            border-radius: 20px;
+            margin: 10px 30px;
+        }
+        input[type=button]:hover{
+            cursor: pointer;
+            background-color: red;
+            transform: scale(1.5);
+        }
+        #info{
+            display: none;
+            width: 60%;
+            height: 60%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            border: 2px solid black;
+            border-radius: 20px;
+        }
+        input[type=text]{
+            width: 80%;
+            background-color: lightskyblue;
+            margin: 15px;
+            padding: 10px;
+        }
+        #info:hover{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyB90FxtYG_ybAYXGkz0ybkmkboE2nEbezI"></script>
+    <script>
+        window.addEventListener('load', function () {
+
+            mymap = this.document.getElementById('mymap');
+            info = this.document.getElementById('info');
+            latt = this.document.getElementById('latt');
+            longg = this.document.getElementById('longg');
+            accuu = this.document.getElementById('accuu');
+            timee = this.document.getElementById('timee');
+        });
+        function getourlocation() {
+            mymap.style.display ="block"
+            info.style.display ="none"
+
+            if (navigator.geolocation) {
+
+                navigator.geolocation.getCurrentPosition(getposition, errorhandeler);
+
+            } else {
+                mymap.innerText = "Sorry , Update Your Browser And Try Again !!!!";
+            }
+        }
+        function getposition(position) {
+            lat = position.coords.latitude;
+            lon = position.coords.longitude;
+            // accu = geolocationCoordinatesInstance.accuracy;
+             time = position.timestamp;
+
+            var location = new google.maps.LatLng(lat, lon);
+            var mapspecs = {
+                center: location,
+                zoom: 17
+            };
+
+            new google.maps.Map(mymap, mapspecs);
+        }
+        function errorhandeler(error) {
+            switch (error.code) {
+                case error.PERMISSION_DENIED:
+                    mymap.innerText = "You Have To Give Permission To Be Able To Access All Features !";
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    break;
+                case error.TIMEOUT:
+                    break;
+                case error.UNKOWN_ERROR:
+                    break;
+            }
+        }
+        function getourlocationdata(){
+            info.style.display ="block"
+            mymap.style.display ="none"
+            latt.value = lat;
+            longg.value = lon;
+            accuu.value = accu;
+            timee.value = time;
+        }
+    </script>
+</head>
+<body>
+    <div id="maindiv">
+        <div id="internal">
+            <section id="top">
+                <input type="button" value="Display Map" onclick="getourlocation();"/>
+                <input type="button" value="Detailed info" onclick="getourlocationdata();"/>
+            </section>
+            <section id="bottom">
+                <div id="mymap"></div>
+                <div id="info">
+                    <h4>Latitude (degree)</h4>
+                    <input type="text" id="latt">
+                    <h4>Longitude (degree)</h4>
+                    <input type="text" id="longg">
+                    <h4>Accuracy (m)</h4>
+                    <input type="text" id="accuu">
+                    <h4>TimeStamp (Current Time and Date)</h4>
+                    <input type="text" id="timee">
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

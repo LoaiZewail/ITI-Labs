@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+            *{
+            padding: 0px;
+            margin: 0px;
+            transition: 2s;
+            }
+            #maindiv{
+            width: 80%;
+            height: 450px;
+            border: 2px solid black;
+            border-radius: 25px;
+            padding: 5px;
+            margin: 40px auto;
+            box-shadow: rgb(255, 151, 132) 50px 50px 50px inset, rgb(255, 151, 132) -50px -50px 50px inset;
+            transition: transform 2s ;
+            }
+            #internal{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding:15px;
+            }
+            #top{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 15px;
+            width: 100%;
+            height: 150px;
+            margin: 10px 10px 10px 10px;
+            border: 2px solid black;
+            border-radius: 25px;
+            box-shadow: rgb(255, 151, 132) 50px 50px 50px inset, rgb(255, 151, 132) -50px -50px 50px inset;
+            }
+            #bottom{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            width: 100%;
+            height: 150px;
+            margin: 10px 10px 10px 0;
+            border: 2px solid black;
+            border-radius: 25px;
+            box-shadow: rgb(255, 151, 132) 50px 50px 50px inset, rgb(255, 151, 132) -50px -50px 50px inset;
+            }
+        img{
+            width:100px;
+            height:100px;
+            margin:10px;
+            border: 2px groove cyan;
+        }
+        img:hover{
+            transform: scale(1.5);
+        }
+        h1{
+            margin: auto;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            text-align: center;
+        }
+    </style>
+    <script>
+        window.addEventListener('load', function () {
+            allimages = this.document.querySelectorAll('.iti');
+            for (var i = 0; i < allimages.length; i++) {
+                allimages[i].addEventListener('dragstart', startdrag);
+                allimages[i].addEventListener('dragend', enddrag);
+            }
+
+            bottom = this.document.getElementById('bottom');
+            bottom.addEventListener('drop', dropped);
+            bottom.addEventListener('dragenter', enterdrag);
+            bottom.addEventListener('dragover', leavedrag);
+
+            top = document.getElementById('top');
+            top.addEventListener('dragleave', leavedrag);
+
+
+        });
+        
+        function startdrag(e) {
+            e.dataTransfer.setData("myimg", e.target.outerHTML);
+        }
+        function enddrag(e) {
+            e.preventDefault();
+            e.target.style.display = 'none';
+            ///
+            var imgtop = document.querySelectorAll('#top img')
+            var z=0;
+            for (var i = 0; i < imgtop.length; i++) {
+                if (imgtop[i].style.display=="none"){
+                    z++
+                }
+            }
+            if (z==imgtop.length){
+                document.getElementById('top').style.backgroundColor="red";
+                document.getElementById('top').innerHTML += "<h1>EMPTY</h1>";
+            }
+            ///
+        }
+        function dropped(e) {
+            e.preventDefault();
+            bottom.innerHTML +=e.dataTransfer.getData("myimg");
+        }
+        function enterdrag(e) {
+            e.preventDefault();
+            bottom.style.backgroundColor = 'pink';
+        }
+        function overdrag(e) {
+            e.preventDefault();
+        }
+        function leavedrag(e) {
+            e.preventDefault();
+        }
+
+    </script>
+</head>
+<body>
+    <div id="maindiv">
+        <div id="internal">
+            <section id="top">
+                <img class="iti" src="UP/1.jpg" />
+                <img class="iti" src="UP/2.jpg" />
+                <img class="iti" src="UP/3.jpg" />
+                <img class="iti" src="UP/4.jpg" />
+                <img class="iti" src="UP/5.jpg" />
+                <img class="iti" src="UP/6.jpg" />
+                <img class="iti" src="UP/7.jpg" />
+                <img class="iti" src="UP/8.jpg" />
+            </section>
+            <section id="bottom">
+
+            </section>
+        </div>
+    </div>
+</body>
+</html>

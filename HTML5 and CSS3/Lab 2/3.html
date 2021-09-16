@@ -1,0 +1,240 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>ITI Admission</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+            box-sizing:border-box;
+        }
+        ul{
+            display:flex;
+            justify-content:space-around;
+            
+            min-height:10vh;
+            align-items:center;
+        }
+        li{
+            list-style:none;
+        }
+        li>a{
+            text-decoration:none;
+            color:rgb(129 124 124);
+        }
+            li > a:hover {
+                color: rgb(142 16 16);
+            }
+            ul>h4{
+                color:white;
+                font-size:1.2rem;
+                text-shadow:1px 1px 1px gray , -1px -1px 1px black;
+            }
+                ul > h4:hover {
+                    color: rgb(142 16 16);
+                    cursor:pointer;
+                }
+                .cover{
+                    background-image:url(images/laptop_top.jpg);
+                    height:90vh;
+                    background-position:center;
+                    background-size:cover;
+                    display:flex;
+                    flex-direction:column;
+                    align-items:center;
+                    justify-content:center;
+                }
+                .cover>h3{
+                    color:white;
+                    text-align:center;
+                    font-size:2rem;
+                }
+                    .cover > button {
+                        margin-top: 10px;
+                        padding: 1rem 1.2rem;
+                        border-radius: 10px;
+                        background: -webkit-linear-gradient(top left,rgb(17 161 225),rgb(133 217 239));
+                    }
+                        .cover > button:hover {
+                            background: -webkit-linear-gradient(top left,rgb(133 217 239),rgb(17 161 225));
+                            cursor:pointer;
+                        }
+        .introduction {
+            display: flex;
+            margin-bottom:1rem;
+            flex-wrap:wrap;
+        }
+            .introduction > .intro-image, .introduction > .intro-links{
+                flex:1 1 23rem;
+            }
+
+            .introduction > .intro-image > img {
+                width: 100%;
+                height: 100%;
+            }
+        .intro-links{
+            background-color:rgb(220 222 210);
+            display:flex;
+            flex-direction:column;
+            align-items:center;  
+            justify-content:space-between;
+        }
+            .intro-links>h3{
+                margin-top:1rem;
+            }
+            .intro-links > p {
+                width: 90%;
+                text-align: left;
+                margin-top:2.5rem;
+            }
+            .tracks{
+                display:flex;
+                justify-content:space-around;
+                flex-wrap:wrap;
+            }
+            .track{
+                text-align:center;
+            }
+            .track>p>a{
+                text-decoration:none;
+                font:bold 1rem verdana;
+                color:rgb(129 124 124);
+            }
+                .track > p > a:hover {
+                    color: rgb(142 16 16);
+                }
+
+            .locations {
+            display: flex;
+            margin-bottom:1rem;
+            flex-wrap:wrap;
+        }
+            .locations > .location-image, .locations > .location-links{
+                flex:1 1 23rem;
+            }
+
+            .locations > .location-image > img {
+                width: 100%;
+                height: 100%;
+            }
+        .location-links{
+            padding: 10px;
+            display:flex;
+            flex-direction:row;
+            align-items:center;  
+            justify-content:space-evenly;
+            flex-wrap: wrap;
+        }
+            .location-links>h3{
+                margin-top:1rem;
+                margin-left: 50%;
+                margin-right: 50%;
+                text-align: center;
+                color: brown;
+            }
+            .location-links > p {
+                text-align: left;
+                margin-top:2.5rem;
+                background-color:rgb(220 222 210);
+                width: 14rem;
+                height: 4rem;
+            }
+            footer{
+                display: flex;
+                justify-content: space-evenly;
+                flex-wrap: wrap;
+                background-color: rgb(27, 27, 27);
+                padding: 20px;
+                margin-bottom: 3rem;
+            }
+            .contact , .follow{
+                flex:1 1 23rem ;
+            }
+            .contact > h3, .follow>h3{
+                color: white;
+                font-weight: bold;
+            }
+            .contact > p , .follow>p{
+                color: lightslategray;
+            }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Contact</a></li>
+        <h4>ITI Admission</h4>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Register</a></li>
+    </ul>
+    <div class="cover">
+        <h3>To Be One Of Our Team <br/> Register Now !!</h3>
+        <button>Register</button>
+    </div>
+    <div class="introduction">
+        <div class="intro-image">
+            <img src="images/pexels-christina-morillo-1181210.jpg" title="ITI Life"/>
+        </div>
+        <div class="intro-links">
+            <h3>Students Corner</h3>
+            <p>ITI Hakathon</p>
+            <p>ITI Outings</p>
+            <p>ITI Job Fairs</p>
+            <p>ITI Tracks</p>
+        </div>
+    </div>
+    <div class="tracks">
+        <div class="track">
+            <img src="https://via.placeholder.com/250
+C/O https://placeholder.com/" title="Front End And Mobile Track" />
+            <h4>Front End And Cross Mobile Track</h4>
+            <p>For More Details Click <a href="#">More..</a></p>
+        </div>
+
+        <div class="track">
+            <img src="https://via.placeholder.com/250
+C/O https://placeholder.com/" title="Python Track" />
+            <h4>Python Track</h4>
+            <p>For More Details Click <a href="#">More..</a></p>
+        </div>
+
+        <div class="track">
+            <img src="https://via.placeholder.com/250
+C/O https://placeholder.com/" title="FullStack DotNet" />
+            <h4>FullStack Track</h4>
+            <p>For More Details Click <a href="#">More..</a></p>
+        </div>
+    </div>
+    <div class="locations">
+        <div class="location-image">
+            <img src="images/egypt_map.jpg" title="map"/>
+        </div>
+        <div class="location-links">
+            <h3>ITI Locations</h3>
+            <p>ITI - Smart Village</p>
+            <p>ITI - Alexandria</p>
+            <p>ITI - Aswan</p>
+            <p>ITI - Mansoura</p>
+            <p>ITI - Assuit</p>
+            <p>ITI - Ismaillia</p>
+            <p>ITI - Menofia</p>
+            <p>ITI - Minya</p>
+        </div>
+    </div>
+    <footer>
+        <div class="contact">
+            <h3>CONTACT US</h3>
+            <p>28 km by Cairo / Alexandria Desert Road</p>
+            <p>20235355656</p>
+            <p>ItIinfo@iti.gov.eg</p>
+        </div>
+        <div class="follow">
+            <h3>FOLLOW US</h3>
+            <p>facebook</p>
+            <p>twitter</p>
+            <p>youtube</p>
+        </div>
+    </footer>
+</body>
+</html>

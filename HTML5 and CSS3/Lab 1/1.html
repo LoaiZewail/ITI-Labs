@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            transition: 2s;
+        }
+            #maindiv{
+            width: 80%;
+            height: 500px;
+            border: 4px groove yellow;
+            border-radius: 15px;
+            padding: 5px;
+            margin: 40px auto;
+            box-shadow: rgb(96, 235, 96) 50px 50px 50px inset, rgb(96, 235, 96) -50px -50px 50px inset,rgb(252, 88, 178) 50px 50px 50px;
+            transition: transform 2s ;
+            }
+            #internal{
+            display: -webkit-box;
+            padding:5px;
+            }
+            img{
+                width: 100px;
+                height: 100px;
+                border: 2px solid indigo;
+                box-shadow: rgb(252, 0, 0) 10px 10px 10px;
+                margin: 11px;
+            }
+            #left{
+            -webkit-box-flex: 1;
+            padding: 10px;
+            width: 40%;
+            height: 440px;
+            margin: 10px 10px 10px 0;
+            border: 4px solid black;
+            border-radius: 15px;
+            box-shadow: rgb(96, 122, 235) 50px 50px 50px inset, rgb(96, 122, 235) -50px -50px 50px inset;
+            overflow:auto;
+            column-count:3;
+            column-gap:30px;
+            column-rule:3px solid red;
+            }
+            #right{
+            -webkit-box-flex: 1;
+            padding: 10px;
+            width: 50%;
+            height: 440px;
+            margin: 10px 10px 10px 0;
+            border: 4px solid blue;
+            border-radius: 15px;
+            box-shadow: rgb(235, 96, 108) 50px 50px 50px inset, rgb(235, 96, 108) -50px -50px 50px inset;
+            overflow-y: scroll;
+            }
+            mark{
+                color: red;
+            }
+            #maindiv:hover{
+                transform:skew(10deg);
+                transition: transform 2s ;
+            }
+            #left:hover{
+                text-decoration: underline;
+            }
+            img:hover{
+                transform:scale(1.3);
+                transition: transform 2s ;
+            }
+            #maindiv:active{
+                transform:scale(0.5);
+                transition: transform 2s ;
+            }
+            img:active{
+                transform:scale(3);
+                transition: transform 2s ;
+            }
+            mark:active{
+                font-size: larger;
+            }
+        @media all and ( orientation:portrait){
+            #right , #left{
+                border: 4px solid red;
+            }
+            mark{
+                color:blue;
+            }
+            img{
+                transform: rotate(15deg);
+                transition: 2s;
+            }
+            img:active{
+                border: 2px dotted blue;
+                transform: none;
+            }
+            #maindiv:hover{
+                transform: none;
+                transition: none;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="maindiv">
+        <div id="internal">
+        <section id="left">
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <mark>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            </mark>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+            <h4>ITI Mansoura</h4>
+        </section>
+        <section id="right">
+            <img src="1.jpg">
+            <img src="1.jpg">
+            <img src="1.jpg">
+            <img src="1.jpg">
+            <img src="1.jpg">
+            <img src="1.jpg">
+            <img src="1.jpg">
+            <img src="1.jpg">
+            <img src="1.jpg">
+            <img src="1.jpg">
+            <img src="1.jpg">
+            <img src="1.jpg">
+            <img src="1.jpg">
+            <img src="1.jpg">
+            <img src="1.jpg">
+            <img src="1.jpg">
+            <img src="1.jpg">
+            <img src="1.jpg">
+            <img src="1.jpg">
+            <img src="1.jpg">
+            <img src="1.jpg">
+            <img src="1.jpg">
+            <img src="1.jpg">
+            <img src="1.jpg">
+            <img src="1.jpg">
+            <img src="1.jpg">
+            <img src="1.jpg">
+            <img src="1.jpg">
+            <img src="1.jpg">
+            <img src="1.jpg">
+            <img src="1.jpg">
+            <img src="1.jpg">
+            <img src="1.jpg">
+            <img src="1.jpg">
+        </section>
+        </div>
+    </div>
+</body>
+</html>
